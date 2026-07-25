@@ -1,0 +1,42 @@
+/* ========================= */
+/* FAQ Introduction */
+/* ========================= */
+
+#faq-intro{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+#faq-intro h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#faq-intro p{
+    text-align:center;
+    line-height:1.6;
+}
+
+
+/* ========================= */
+/* FAQ Boxes */
+/* ========================= */
+
+.faq-box{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.faq-box h3{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.faq-box p{
+    text-align:justify;
+    line-height:1.6;
+}

@@ -1,0 +1,72 @@
+/* ========================= */
+/* About Introduction */
+/* ========================= */
+
+#about-intro{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+#about-intro h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#about-intro p{
+    text-align:justify;
+    line-height:1.7;
+}
+
+
+/* ========================= */
+/* About Sections */
+/* ========================= */
+
+.about-section{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.about-section h2{
+    margin-bottom:15px;
+    color:#333;
+}
+
+.about-section p{
+    line-height:1.7;
+    text-align:justify;
+}
+
+.about-section ul{
+    margin-left:20px;
+    margin-top:10px;
+}
+
+.about-section ul li{
+    margin-bottom:10px;
+}
+
+
+/* ========================= */
+/* Why StudentHub */
+/* ========================= */
+
+#why-studenthub{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+}
+
+#why-studenthub h2{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+#why-studenthub p{
+    text-align:justify;
+    line-height:1.7;
+}

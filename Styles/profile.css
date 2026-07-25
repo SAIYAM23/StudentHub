@@ -1,0 +1,42 @@
+/* ========================= */
+/* Profile Box */
+/* ========================= */
+
+#profile-box{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+#profile-box h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+#profile-box table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+#profile-box td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+#profile-box td:first-child{
+    width:180px;
+}
+
+
+/* ========================= */
+/* Profile Actions */
+/* ========================= */
+
+#profile-actions{
+    text-align:center;
+}
+
+#profile-actions .button{
+    margin:0 10px;
+}
