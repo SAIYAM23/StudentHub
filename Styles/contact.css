@@ -20,12 +20,15 @@
 }
 
 #contact-info table{
-    width:100%;
+    width:38%;
+    margin-left: 70px;
+    margin-right: auto;
     border-collapse:collapse;
 }
 
 #contact-info td{
     padding:10px;
+    vertical-align:top;
 }
 
 
@@ -45,7 +48,9 @@
 }
 
 #contact-form table{
-    width:100%;
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #contact-form td{

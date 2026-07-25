@@ -37,12 +37,18 @@
 }
 
 #add-event table{
-    width:100%;
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #add-event td{
     padding:10px;
     vertical-align:top;
+}
+
+#add-event td:first-child{
+    padding-right: 0%;
 }
 
 #add-event input[type="text"],
@@ -81,7 +87,10 @@
 }
 
 #event-list table{
-    width:100%;
+    width:95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
     border-collapse:collapse;
 }
 

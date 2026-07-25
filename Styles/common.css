@@ -101,8 +101,12 @@ ul{
 /* -------------------- */
 
 #content{
-    width:90%;
+    width:70%;
     margin:30px auto;
+}
+
+#content div{
+    border-radius: 10px;
 }
 
 /* -------------------- */
