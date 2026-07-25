@@ -148,7 +148,7 @@ Admin
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/studenthub.git
+git clone https://github.com/SAIYAM23/StudentHub.git
 ```
 
 ### Open the Project
@@ -240,7 +240,7 @@ git push origin feature-name
 
 **SAIYAMMM**
 
-GitHub: **https://github.com/your-github-username**
+GitHub: **https://github.com/SAIYAM23/StudentHub.git**
 
 ---
 
