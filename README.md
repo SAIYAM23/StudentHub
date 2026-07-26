@@ -99,27 +99,24 @@ StudentHub/
 # 🌐 Website Flow
 
 ```text
-Home
- │
- ├── About
- ├── Events
- ├── FAQ
- ├── Contact
- │
- ├── Login
- │      │
- │      └── Dashboard
- │             ├── Profile
- │             └── My Events
- │
- └── Register
-        │
-        └── Login
-
-Admin
- │
- ├── Admin Dashboard
- └── Manage Events
+StudentHub
+│
+├── Home
+├── About
+├── Events
+├── FAQ
+├── Contact
+├── Login
+├── Register
+│
+├── Student Dashboard
+│   ├── Profile
+│   ├── My Events
+│   └── Logout
+│
+└── Admin Dashboard
+    ├── Manage Events
+    └── Logout
 ```
 
 ---
