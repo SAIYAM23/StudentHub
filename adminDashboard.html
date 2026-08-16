@@ -1,168 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>StudentHub | Admin Dashboard</title>
-
-    <link rel="stylesheet" href="Styles/common.css">
-    <link rel="stylesheet" href="Styles/adminDashboard.css">
-
+    <!-- <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/adminDashboard.css"> -->
 </head>
-
 <body>
 
     <!-- Header Starts -->
-
-    <div id="header">
-
+    <header>
         <div id="logo">
-
             <h1>StudentHub</h1>
-
             <p>Your Digital Campus Companion</p>
-
         </div>
-
-    </div>
-
+    </header>
     <!-- Header Ends -->
 
-
-
     <!-- Navigation Starts -->
-
-    <div id="nav">
-
+    <nav aria-label="Admin Navigation">
         <ul>
-
-            <li><a href="admindashboard.html" class="active">Admin Dashboard</a></li>
+            <li><a href="admindashboard.html" class="active" aria-current="page">Admin Dashboard</a></li>
             <li><a href="manageevents.html">Manage Events</a></li>
             <li><a href="index.html">Logout</a></li>
-
         </ul>
-
-    </div>
-
+    </nav>
     <!-- Navigation Ends -->
 
-
-
-    <!-- Content Starts -->
-
-    <div id="content">
-
-        <div id="admin-welcome">
-
+    <!-- Main Content Starts -->
+    <main>
+        <section id="admin-welcome">
             <h2>Administrator Dashboard</h2>
-
             <p>
                 Welcome to the StudentHub Admin Panel.
                 Here you can manage college events and monitor
                 the StudentHub portal.
             </p>
+        </section>
 
-        </div>
+        <section id="admin-cards" aria-labelledby="admin-summary-heading">
+            <h2 id="admin-summary-heading">Dashboard Summary</h2>
 
-
-
-        <div id="admin-cards">
-
-            <div class="admin-card">
-
+            <article class="admin-card">
                 <h3>Total Students</h3>
-
                 <p>350</p>
+            </article>
 
-            </div>
-
-            <div class="admin-card">
-
+            <article class="admin-card">
                 <h3>Total Events</h3>
-
                 <p>6</p>
+            </article>
 
-            </div>
-
-            <div class="admin-card">
-
+            <article class="admin-card">
                 <h3>Registered Students</h3>
-
                 <p>215</p>
+            </article>
+        </section>
 
-            </div>
-
-        </div>
-
-
-
-        <div id="recent-events">
-
+        <section id="recent-events">
             <h2>Recent Events</h2>
 
             <table>
-
-                <tr>
-
-                    <th>Event</th>
-                    <th>Date</th>
-                    <th>Status</th>
-
-                </tr>
-
-                <tr>
-
-                    <td>Tech Fest</td>
-                    <td>05 Aug 2026</td>
-                    <td>Open</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Hackathon</td>
-                    <td>18 Aug 2026</td>
-                    <td>Open</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Sports Meet</td>
-                    <td>25 Aug 2026</td>
-                    <td>Upcoming</td>
-
-                </tr>
-
+                <caption>Recent StudentHub events and their current status</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Event</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tech Fest</td>
+                        <td>05 Aug 2026</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Hackathon</td>
+                        <td>18 Aug 2026</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Sports Meet</td>
+                        <td>25 Aug 2026</td>
+                        <td>Upcoming</td>
+                    </tr>
+                </tbody>
             </table>
-
-        </div>
-
-    </div>
-
-    <!-- Content Ends -->
-
-
+        </section>
+    </main>
+    <!-- Main Content Ends -->
 
     <!-- Footer Starts -->
-
-    <div id="footer">
-
+    <footer>
         <h2>StudentHub</h2>
-
         <p>Your Digital Campus Companion</p>
-
-        <p>studenthub@college.edu</p>
-
+        <p>
+            Email:
+            <a href="mailto:studenthub@college.edu">studenthub@college.edu</a>
+        </p>
         <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
-    </div>
-
+    </footer>
     <!-- Footer Ends -->
 
 </body>
-
 </html>

@@ -17,12 +17,18 @@
 
 #register-box table{
     width:100%;
+    border-collapse:collapse;
 }
 
 #register-box td{
     padding:10px;
     vertical-align:middle;
 }
+
+
+/* ========================= */
+/* Form Fields */
+/* ========================= */
 
 #register-box input[type="text"],
 #register-box input[type="email"],
@@ -42,4 +48,102 @@
 
 #register-box .button{
     margin-right:10px;
+}
+
+
+/* ========================= */
+/* Required Field Star */
+/* ========================= */
+
+#register-box .required{
+    color:red;
+    font-weight:bold;
+}
+
+
+/* ========================= */
+/* Field Container */
+/* ========================= */
+
+#register-box .field-container{
+    width:100%;
+}
+
+
+/* ========================= */
+/* Invalid Field */
+/* ========================= */
+
+#register-box .invalid{
+    background-color:#fff7f7;
+    border-color:#e57373;
+}
+
+
+/* ========================= */
+/* Error Message */
+/* ========================= */
+
+#register-box .field-container small{
+    display:block;
+    width:100%;
+    box-sizing:border-box;
+
+    color:#d32f2f;
+    font-size:13px;
+    line-height:18px;
+
+    margin-top:4px;
+
+    white-space:normal;
+    overflow-wrap:break-word;
+    word-wrap:break-word;
+}
+
+
+/* ========================= */
+/* Submit Attention Effect */
+/* ========================= */
+
+#register-box .attention {
+    animation: attention 0.65s ease-in-out;
+}
+
+@keyframes attention {
+
+    0% {
+        transform: translateX(0);
+        background-color: #ffffff;
+        box-shadow: 0 0 0 0 rgba(220, 70, 70, 0);
+    }
+
+    20% {
+        transform: translateX(-4px);
+        background-color: #fff5f5;
+        box-shadow: 0 0 0 3px rgba(220, 70, 70, 0.12);
+    }
+
+    40% {
+        transform: translateX(4px);
+        background-color: #ffecec;
+        box-shadow: 0 0 0 3px rgba(220, 70, 70, 0.18);
+    }
+
+    60% {
+        transform: translateX(-3px);
+        background-color: #fff5f5;
+        box-shadow: 0 0 0 2px rgba(220, 70, 70, 0.12);
+    }
+
+    80% {
+        transform: translateX(2px);
+        background-color: #fffafa;
+        box-shadow: 0 0 0 1px rgba(220, 70, 70, 0.08);
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: #ffffff;
+        box-shadow: 0 0 0 0 rgba(220, 70, 70, 0);
+    }
 }

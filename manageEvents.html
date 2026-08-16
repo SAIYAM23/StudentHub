@@ -1,211 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>StudentHub | Manage Events</title>
-
-    <link rel="stylesheet" href="Styles/common.css">
-    <link rel="stylesheet" href="Styles/manageEvents.css">
-
+    <!-- <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/manageEvents.css"> -->
 </head>
-
 <body>
 
     <!-- Header Starts -->
-
-    <div id="header">
-
+    <header>
         <div id="logo">
-
             <h1>StudentHub</h1>
-
             <p>Your Digital Campus Companion</p>
-
         </div>
-
-    </div>
-
+    </header>
     <!-- Header Ends -->
 
-
-
     <!-- Navigation Starts -->
-
-    <div id="nav">
-
+    <nav aria-label="Admin Navigation">
         <ul>
-
             <li><a href="admindashboard.html">Admin Dashboard</a></li>
-            <li><a href="manageevents.html" class="active">Manage Events</a></li>
+            <li><a href="manageevents.html" class="active" aria-current="page">Manage Events</a></li>
             <li><a href="index.html">Logout</a></li>
-
         </ul>
-
-    </div>
-
+    </nav>
     <!-- Navigation Ends -->
 
-
-
-    <!-- Content Starts -->
-
-    <div id="content">
-
-        <div id="manage-title">
-
+    <!-- Main Content Starts -->
+    <main>
+        <section id="manage-title">
             <h2>Manage College Events</h2>
-
             <p>
                 The administrator can add, update and remove
                 college events from this page.
             </p>
+        </section>
 
-        </div>
+        <section id="add-event" aria-labelledby="add-event-heading">
+            <h2 id="add-event-heading">Add New Event</h2>
 
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Event Information</legend>
 
+                    <div>
+                        <label for="event-name">Event Name</label>
+                        <input type="text" id="event-name" name="event_name" placeholder="Enter Event Name" required>
+                    </div>
 
-        <div id="add-event">
+                    <div>
+                        <label for="event-date">Date</label>
+                        <input type="date" id="event-date" name="event_date" required>
+                    </div>
 
-            <h2>Add New Event</h2>
+                    <div>
+                        <label for="event-venue">Venue</label>
+                        <input type="text" id="event-venue" name="event_venue" placeholder="Enter Venue" required>
+                    </div>
 
-            <form action="#">
+                    <div>
+                        <label for="event-description">Description</label>
+                        <textarea id="event-description" name="event_description" rows="4" placeholder="Enter Event Description" required></textarea>
+                    </div>
 
-                <table>
-
-                    <tr>
-
-                        <td>Event Name</td>
-                        <td>:</td>
-                        <td>
-                            <input type="text" placeholder="Enter Event Name">
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Date</td>
-                        <td>:</td>
-                        <td>
-                            <input type="date">
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Venue</td>
-                        <td>:</td>
-                        <td>
-                            <input type="text" placeholder="Enter Venue">
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Description</td>
-                        <td>:</td>
-                        <td>
-                            <textarea rows="4" placeholder="Enter Event Description"></textarea>
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td></td>
-                        <td></td>
-                        <td>
-
-                            <input type="submit" value="Add Event" class="button">
-
-                            <input type="reset" value="Reset" class="button">
-
-                        </td>
-
-                    </tr>
-
-                </table>
-
+                    <div>
+                        <input type="submit" value="Add Event" class="button">
+                        <input type="reset" value="Reset" class="button">
+                    </div>
+                </fieldset>
             </form>
+        </section>
 
-        </div>
-
-
-
-        <div id="event-list">
-
-            <h2>Existing Events</h2>
+        <section id="event-list" aria-labelledby="event-list-heading">
+            <h2 id="event-list-heading">Existing Events</h2>
 
             <table>
-
-                <tr>
-
-                    <th>Event Name</th>
-                    <th>Date</th>
-                    <th>Venue</th>
-                    <th>Status</th>
-
-                </tr>
-
-                <tr>
-
-                    <td>Tech Fest</td>
-                    <td>05 Aug 2026</td>
-                    <td>Main Auditorium</td>
-                    <td>Open</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Hackathon</td>
-                    <td>18 Aug 2026</td>
-                    <td>Computer Lab</td>
-                    <td>Open</td>
-
-                </tr>
-
-                <tr>
-
-                    <td>Sports Meet</td>
-                    <td>25 Aug 2026</td>
-                    <td>Sports Ground</td>
-                    <td>Upcoming</td>
-
-                </tr>
-
+                <caption>List of existing college events</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tech Fest</td>
+                        <td>05 Aug 2026</td>
+                        <td>Main Auditorium</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Hackathon</td>
+                        <td>18 Aug 2026</td>
+                        <td>Computer Lab</td>
+                        <td>Open</td>
+                    </tr>
+                    <tr>
+                        <td>Sports Meet</td>
+                        <td>25 Aug 2026</td>
+                        <td>Sports Ground</td>
+                        <td>Upcoming</td>
+                    </tr>
+                </tbody>
             </table>
-
-        </div>
-
-    </div>
-
-    <!-- Content Ends -->
-
-
+        </section>
+    </main>
+    <!-- Main Content Ends -->
 
     <!-- Footer Starts -->
-
-    <div id="footer">
-
+    <footer>
         <h2>StudentHub</h2>
-
         <p>Your Digital Campus Companion</p>
-
-        <p>studenthub@college.edu</p>
-
+        <p>
+            Email:
+            <a href="mailto:studenthub@college.edu">studenthub@college.edu</a>
+        </p>
         <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
-    </div>
-
+    </footer>
     <!-- Footer Ends -->
 
 </body>
-
 </html>

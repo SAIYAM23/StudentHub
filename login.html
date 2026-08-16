@@ -1,139 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>StudentHub | Login</title>
-
-    <link rel="stylesheet" href="Styles/common.css">
-    <link rel="stylesheet" href="Styles/login.css">
-
+    <!-- <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/login.css"> -->
 </head>
-
 <body>
 
     <!-- Header Starts -->
-
-    <div id="header">
-
+    <header>
         <div id="logo">
-
             <h1>StudentHub</h1>
-
             <p>Your Digital Campus Companion</p>
-
         </div>
-
-    </div>
-
+    </header>
     <!-- Header Ends -->
 
-
-
     <!-- Navigation Starts -->
-
-    <div id="nav">
-
+    <nav aria-label="Main Navigation">
         <ul>
-
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="login.html" class="active" aria-current="page">Login</a></li>
             <li><a href="register.html">Register</a></li>
-
         </ul>
-
-    </div>
-
+    </nav>
     <!-- Navigation Ends -->
 
+    <!-- Main Content Starts -->
+    <main>
+        <section id="login-box" aria-labelledby="login-heading">
+            <h2 id="login-heading">Student Login</h2>
 
+            <form action="dashboard.html" method="post">
+                <div>
+                    <label for="idEmail">Email:</label>
+                    <input type="email" id="idEmail" name="email" placeholder="Enter Email" required>
+                </div>
 
-    <!-- Content Starts -->
+                <div>
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="password" placeholder="Enter Password" required>
+                </div>
 
-    <div id="content">
-
-        <div id="login-box">
-
-            <h2>Student Login</h2>
-
-            <form action="dashboard.html">
-
-                <table>
-
-                    <tr>
-
-                        <td>Email</td>
-                        <td>:</td>
-                        <td>
-                            <input type="email" id="idEmail" placeholder="Enter Email">
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Password</td>
-                        <td>:</td>
-                        <td>
-                            <input type="password" id="pass" placeholder="Enter Password">
-                        </td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td></td>
-                        <td></td>
-                        <td>
-
-                            <input type="submit" id="submitbtn" value="Login" class="button">
-
-                            <a href="register.html" class="button">Register</a>
-
-                        </td>
-
-                    </tr>
-
-                </table>
-
+                <div>
+                    <input type="submit" id="submitbtn" value="Login" class="button">
+                    <a href="register.html" class="button">Register</a>
+                </div>
             </form>
 
             <p class="admin-link">
                 <strong>Demo Admin:</strong>
                 Open <a href="admindashboard.html">Admin Dashboard</a>
             </p>
-
-        </div>
-
-    </div>
-
-    <!-- Content Ends -->
-
-
+        </section>
+    </main>
+    <!-- Main Content Ends -->
 
     <!-- Footer Starts -->
-
-    <div id="footer">
-
+    <footer>
         <h2>StudentHub</h2>
-
         <p>Your Digital Campus Companion</p>
-
-        <p>studenthub@college.edu</p>
-
+        <p>
+            Email:
+            <a href="mailto:studenthub@college.edu">studenthub@college.edu</a>
+        </p>
         <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
-    </div>
-
+    </footer>
     <!-- Footer Ends -->
 
 </body>
-
 </html>
