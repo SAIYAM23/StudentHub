@@ -8,6 +8,7 @@
     background-color:#ffffff;
     border:1px solid #ccc;
     padding:30px;
+    border-radius:5px;
 }
 
 #login-box h2{
@@ -15,12 +16,14 @@
     margin-bottom:25px;
 }
 
-#login-box table{
-    width:100%;
+#login-box form > div{
+    margin-bottom:15px;
 }
 
-#login-box td{
-    padding:10px;
+#login-box label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
 }
 
 #login-box input[type="email"],
@@ -28,8 +31,18 @@
     width:100%;
     padding:10px;
     border:1px solid #999;
-    border-radius:4px;
+    border-radius:5px;
     font-size:15px;
+}
+
+#login-box input[type="email"]:focus,
+#login-box input[type="password"]:focus{
+    outline:none;
+    border-color:#555;
+}
+
+#login-box .button{
+    margin-right:10px;
 }
 
 .admin-link{
@@ -46,4 +59,18 @@
 
 .admin-link a:hover{
     text-decoration:underline;
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media screen and (max-width:600px){
+
+    #login-box{
+        width:90%;
+        margin:25px auto;
+        padding:20px;
+    }
+
 }

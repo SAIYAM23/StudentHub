@@ -8,6 +8,7 @@
     background-color:#ffffff;
     border:1px solid #ccc;
     padding:30px;
+    border-radius:5px;
 }
 
 #register-box h2{
@@ -15,41 +16,80 @@
     margin-bottom:25px;
 }
 
-#register-box table{
-    width:100%;
-    border-collapse:collapse;
+/* ========================= */
+/* Fieldsets */
+/* ========================= */
+
+#register-box fieldset{
+    border:1px solid #ccc;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:5px;
 }
 
-#register-box td{
-    padding:10px;
-    vertical-align:middle;
+#register-box legend{
+    padding:0 8px;
+    font-weight:bold;
+    color:#333;
 }
 
+#register-box fieldset fieldset{
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#register-box fieldset > p{
+    margin-bottom:10px;
+}
 
 /* ========================= */
 /* Form Fields */
 /* ========================= */
 
+#register-box .field-container{
+    width:100%;
+    margin-bottom:15px;
+}
+
+#register-box .field-container label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
 #register-box input[type="text"],
 #register-box input[type="email"],
 #register-box input[type="password"],
+#register-box input[type="date"],
+#register-box input[type="tel"],
 #register-box select{
     width:100%;
     padding:10px;
     border:1px solid #999;
-    border-radius:4px;
+    border-radius:5px;
     font-size:15px;
-    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 #register-box select{
     background-color:#ffffff;
 }
 
-#register-box .button{
-    margin-right:10px;
+#register-box input[type="radio"],
+#register-box input[type="checkbox"]{
+    margin-right:5px;
 }
 
+#register-box fieldset > label{
+    display:block;
+    margin-bottom:10px;
+}
+
+#register-box input:focus,
+#register-box select:focus{
+    outline:none;
+    border-color:#555;
+}
 
 /* ========================= */
 /* Required Field Star */
@@ -60,90 +100,49 @@
     font-weight:bold;
 }
 
-
 /* ========================= */
-/* Field Container */
+/* Form Actions */
 /* ========================= */
 
-#register-box .field-container{
-    width:100%;
+#register-box .form-actions{
+    text-align:center;
+    margin-top:10px;
 }
 
-
-/* ========================= */
-/* Invalid Field */
-/* ========================= */
-
-#register-box .invalid{
-    background-color:#fff7f7;
-    border-color:#e57373;
+#register-box .button{
+    margin:5px;
 }
 
-
 /* ========================= */
-/* Error Message */
+/* Responsive */
 /* ========================= */
 
-#register-box .field-container small{
-    display:block;
-    width:100%;
-    box-sizing:border-box;
+@media screen and (max-width:900px){
 
-    color:#d32f2f;
-    font-size:13px;
-    line-height:18px;
+    #register-box{
+        width:80%;
+    }
 
-    margin-top:4px;
-
-    white-space:normal;
-    overflow-wrap:break-word;
-    word-wrap:break-word;
 }
 
+@media screen and (max-width:600px){
 
-/* ========================= */
-/* Submit Attention Effect */
-/* ========================= */
-
-#register-box .attention {
-    animation: attention 0.65s ease-in-out;
-}
-
-@keyframes attention {
-
-    0% {
-        transform: translateX(0);
-        background-color: #ffffff;
-        box-shadow: 0 0 0 0 rgba(220, 70, 70, 0);
+    #register-box{
+        width:95%;
+        margin:25px auto;
+        padding:20px;
     }
 
-    20% {
-        transform: translateX(-4px);
-        background-color: #fff5f5;
-        box-shadow: 0 0 0 3px rgba(220, 70, 70, 0.12);
+    #register-box fieldset{
+        padding:15px;
     }
 
-    40% {
-        transform: translateX(4px);
-        background-color: #ffecec;
-        box-shadow: 0 0 0 3px rgba(220, 70, 70, 0.18);
+    #register-box h2{
+        font-size:24px;
     }
 
-    60% {
-        transform: translateX(-3px);
-        background-color: #fff5f5;
-        box-shadow: 0 0 0 2px rgba(220, 70, 70, 0.12);
+    #register-box .button{
+        margin:5px 2px;
     }
 
-    80% {
-        transform: translateX(2px);
-        background-color: #fffafa;
-        box-shadow: 0 0 0 1px rgba(220, 70, 70, 0.08);
-    }
-
-    100% {
-        transform: translateX(0);
-        background-color: #ffffff;
-        box-shadow: 0 0 0 0 rgba(220, 70, 70, 0);
-    }
 }

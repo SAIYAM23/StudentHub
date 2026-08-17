@@ -7,6 +7,7 @@
     border:1px solid #ccc;
     padding:30px;
     margin-bottom:30px;
+    border-radius:5px;
 }
 
 #faq-intro h2{
@@ -19,7 +20,6 @@
     line-height:1.6;
 }
 
-
 /* ========================= */
 /* FAQ Boxes */
 /* ========================= */
@@ -29,6 +29,7 @@
     border:1px solid #ccc;
     padding:20px;
     margin-bottom:20px;
+    border-radius:5px;
 }
 
 .faq-box h3{
@@ -39,4 +40,28 @@
 .faq-box p{
     text-align:justify;
     line-height:1.6;
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media screen and (max-width:600px){
+
+    #faq-intro{
+        padding:20px;
+    }
+
+    #faq-intro p{
+        text-align:left;
+    }
+
+    .faq-box{
+        padding:18px;
+    }
+
+    .faq-box p{
+        text-align:left;
+    }
+
 }

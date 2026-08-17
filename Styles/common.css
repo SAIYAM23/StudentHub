@@ -27,7 +27,7 @@ ul{
 /* Header */
 /* -------------------- */
 
-#header{
+header{
     background-color:#333;
     color:white;
     padding:20px 50px;
@@ -72,27 +72,27 @@ ul{
 /* Navigation */
 /* -------------------- */
 
-#nav{
+nav{
     background-color:#555;
 }
 
-#nav ul{
+nav ul{
     display:flex;
     justify-content:center;
 }
 
-#nav ul li{
+nav ul li{
     margin:0 10px;
 }
 
-#nav ul li a{
+nav ul li a{
     display:block;
     color:white;
     padding:15px 20px;
 }
 
-#nav ul li a:hover,
-#nav ul li a.active{
+nav ul li a:hover,
+nav ul li a.active{
     background-color:#333;
 }
 
@@ -100,20 +100,20 @@ ul{
 /* Common Content */
 /* -------------------- */
 
-#content{
+main{
     width:70%;
     margin:30px auto;
 }
 
-#content div{
-    border-radius: 10px;
+main section{
+    border-radius:5px;
 }
 
 /* -------------------- */
 /* Footer */
 /* -------------------- */
 
-#footer{
+footer{
     background-color:#333;
     color:white;
     text-align:center;
@@ -121,10 +121,71 @@ ul{
     margin-top:40px;
 }
 
-#footer h2{
+footer h2{
     margin-bottom:10px;
 }
 
-#footer p{
+footer p{
     margin:6px 0;
+}
+
+footer a{
+    color:white;
+}
+
+/* -------------------- */
+/* Responsive */
+/* -------------------- */
+
+@media screen and (max-width:900px){
+
+    main{
+        width:85%;
+    }
+
+    header{
+        padding:20px 30px;
+    }
+
+}
+
+@media screen and (max-width:600px){
+
+    header{
+        padding:20px;
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    #logo h1{
+        font-size:28px;
+    }
+
+    #header-buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+    }
+
+    nav ul li{
+        margin:0;
+    }
+
+    nav ul li a{
+        padding:12px 14px;
+    }
+
+    main{
+        width:90%;
+        margin:20px auto;
+    }
+
+    footer{
+        padding:20px 15px;
+    }
+
 }

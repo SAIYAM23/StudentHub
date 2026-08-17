@@ -7,6 +7,7 @@
     border:1px solid #ccc;
     padding:30px;
     margin-bottom:30px;
+    border-radius:5px;
 }
 
 #events-title h2{
@@ -19,6 +20,22 @@
     line-height:1.6;
 }
 
+/* ========================= */
+/* Registered Events Section */
+/* ========================= */
+
+main section[aria-labelledby="registered-events-heading"]{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:25px;
+    margin-bottom:30px;
+    border-radius:5px;
+}
+
+#registered-events-heading{
+    text-align:center;
+    margin-bottom:20px;
+}
 
 /* ========================= */
 /* Events Table */
@@ -27,7 +44,6 @@
 #events-table{
     width:100%;
     border-collapse:collapse;
-    margin-bottom:30px;
 }
 
 #events-table th,
@@ -41,11 +57,47 @@
     background-color:#d9d9d9;
 }
 
-
 /* ========================= */
 /* Back Button */
 /* ========================= */
 
 #back-button{
     text-align:center;
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media screen and (max-width:768px){
+
+    main section[aria-labelledby="registered-events-heading"]{
+        overflow-x:auto;
+    }
+
+    #events-table{
+        min-width:600px;
+    }
+
+}
+
+@media screen and (max-width:600px){
+
+    #events-title{
+        padding:20px;
+    }
+
+    #events-title p{
+        text-align:left;
+    }
+
+    main section[aria-labelledby="registered-events-heading"]{
+        padding:20px;
+        overflow-x:auto;
+    }
+
+    #events-table{
+        min-width:600px;
+    }
+
 }
