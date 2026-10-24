@@ -49,22 +49,29 @@
 
                     <div class="field-container">
                         <label for="rollNo">Enrollment Number <span class="required">*</span></label>
-                        <input type="text" id="rollNo" name="enrollment_number" placeholder="Enter Enrollment Number" required>
+                        <input type="text" id="rollNo" name="enrollment_number" placeholder="Enter Enrollment Number" autocomplete="off" aria-describedby="rollNoError" required>
+                        <small class="field-error" id="rollNoError" aria-live="polite"></small>
                     </div>
 
                     <div class="field-container">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" placeholder="Enter Email Address" autocomplete="email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter Email Address" autocomplete="email" aria-describedby="emailError" required>
+                        <small class="field-error" id="emailError" aria-live="polite"></small>
                     </div>
 
                     <div class="field-container">
                         <label for="password">Password <span class="required">*</span></label>
-                        <input type="password" id="password" name="password" placeholder="Create Password" autocomplete="new-password" required>
+                        <input type="password" id="password" name="password" placeholder="Create Password" autocomplete="new-password" aria-describedby="passwordHelp passwordStrength passwordError" required>
+                        <small id="passwordHelp" class="field-help">Use at least 8 characters, including uppercase, lowercase, and a number.</small>
+                        <div class="strength-track" aria-hidden="true"><div id="strengthBar"></div></div>
+                        <small id="passwordStrength" class="field-help" aria-live="polite">Password strength: not entered</small>
+                        <small class="field-error" id="passwordError" aria-live="polite"></small>
                     </div>
 
                     <div class="field-container">
                         <label for="confirm-password">Confirm Password <span class="required">*</span></label>
-                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" autocomplete="new-password" required>
+                        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" autocomplete="new-password" aria-describedby="confirm-passwordError" required>
+                        <small class="field-error" id="confirm-passwordError" aria-live="polite"></small>
                     </div>
                 </fieldset>
 
@@ -73,12 +80,14 @@
 
                     <div class="field-container">
                         <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input type="text" id="fullName" name="full_name" placeholder="Enter Full Name" autocomplete="name" required>
+                        <input type="text" id="fullName" name="full_name" placeholder="Enter Full Name" autocomplete="name" aria-describedby="fullNameError" required>
+                        <small class="field-error" id="fullNameError" aria-live="polite"></small>
                     </div>
 
                     <div class="field-container">
                         <label for="dob">Date of Birth <span class="required">*</span></label>
-                        <input type="date" id="dob" name="date_of_birth" autocomplete="bday" required>
+                        <input type="date" id="dob" name="date_of_birth" autocomplete="bday" aria-describedby="dobError" required>
+                        <small class="field-error" id="dobError" aria-live="polite"></small>
                     </div>
 
                     <fieldset>
@@ -99,11 +108,13 @@
                             <input type="radio" name="gender" value="prefer-not-to-say">
                             Prefer not to say
                         </label>
+                        <small class="field-error" id="genderError" aria-live="polite"></small>
                     </fieldset>
 
                     <div class="field-container">
                         <label for="mobile">Mobile Number <span class="required">*</span></label>
-                        <input type="tel" id="mobile" name="mobile" placeholder="Enter Mobile Number" autocomplete="tel" required>
+                        <input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" autocomplete="tel" inputmode="numeric" aria-describedby="mobileError" required>
+                        <small class="field-error" id="mobileError" aria-live="polite"></small>
                     </div>
                 </fieldset>
 
@@ -112,7 +123,7 @@
 
                     <div class="field-container">
                         <label for="department">Department <span class="required">*</span></label>
-                        <select id="department" name="department" required>
+                        <select id="department" name="department" aria-describedby="departmentError" required>
                             <option value="">Select Department</option>
                             <option value="computer-engineering">Computer Engineering</option>
                             <option value="computer-science">Computer Science and Engineering</option>
@@ -122,11 +133,12 @@
                             <option value="electrical-engineering">Electrical Engineering</option>
                             <option value="electronics-communication">Electronics and Communication</option>
                         </select>
+                        <small class="field-error" id="departmentError" aria-live="polite"></small>
                     </div>
 
                     <div class="field-container">
                         <label for="semester">Current Semester <span class="required">*</span></label>
-                        <select id="semester" name="semester" required>
+                        <select id="semester" name="semester" aria-describedby="semesterError" required>
                             <option value="">Select Semester</option>
                             <option value="1">Semester 1</option>
                             <option value="2">Semester 2</option>
@@ -137,6 +149,7 @@
                             <option value="7">Semester 7</option>
                             <option value="8">Semester 8</option>
                         </select>
+                        <small class="field-error" id="semesterError" aria-live="polite"></small>
                     </div>
                 </fieldset>
 
@@ -206,14 +219,15 @@
                     <legend>Terms and Conditions</legend>
 
                     <label>
-                        <input type="checkbox" name="terms" value="accepted" required>
+                        <input type="checkbox" id="terms" name="terms" value="accepted" required>
                         I agree to the StudentHub terms and conditions.
                     </label>
 
                     <label>
-                        <input type="checkbox" name="privacy" value="accepted" required>
+                        <input type="checkbox" id="privacy" name="privacy" value="accepted" required>
                         I agree to the StudentHub privacy policy.
                     </label>
+                    <small class="field-error" id="termsError" aria-live="polite"></small>
                 </fieldset>
 
                 <div class="form-actions">
@@ -239,5 +253,6 @@
     <!-- Footer Ends -->
 
     <script src="Scripts/practical4.js" defer></script>
+    <script src="Scripts/formValidation.js" defer></script>
 </body>
 </html>
