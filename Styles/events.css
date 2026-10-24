@@ -2,98 +2,91 @@
 /* Event Introduction */
 /* ========================= */
 
-#event-intro{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+#event-intro {
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#event-intro h2{
-    text-align:center;
-    margin-bottom:15px;
+#event-intro h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#event-intro p{
-    text-align:justify;
-    line-height:1.7;
+#event-intro p {
+    text-align: justify;
+    line-height: 1.7;
 }
 
 /* ========================= */
 /* Event Cards */
 /* ========================= */
 
-#event-container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:25px;
+#event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.event-card{
-    width:31%;
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:20px;
-    text-align:center;
-    border-radius:5px;
+.event-card {
+    flex: 1 1 250px;
+    min-width: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
 }
 
-.event-card h3{
-    margin-bottom:15px;
-    color:#333;
+.event-card h3 {
+    margin-bottom: 15px;
+    color: #333;
 }
 
-.event-card p{
-    margin-bottom:10px;
-    line-height:1.5;
+.event-card p {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-.event-card .button{
-    margin-top:10px;
+.event-card .button {
+    margin-top: 10px;
 }
 
 /* ========================= */
 /* Hidden Heading */
 /* ========================= */
 
-.visually-hidden{
-    position:absolute;
-    width:1px;
-    height:1px;
-    padding:0;
-    margin:-1px;
-    overflow:hidden;
-    clip:rect(0,0,0,0);
-    white-space:nowrap;
-    border:0;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:900px){
-
-    .event-card{
-        width:48%;
+@media screen and (max-width: 900px) {
+    #event-intro {
+        padding: 25px;
     }
-
 }
 
-@media screen and (max-width:600px){
-
-    #event-intro{
-        padding:20px;
+@media screen and (max-width: 600px) {
+    #event-intro {
+        padding: 20px;
     }
 
-    #event-intro p{
-        text-align:left;
+    #event-intro p {
+        text-align: left;
     }
-
-    .event-card{
-        width:100%;
-    }
-
 }

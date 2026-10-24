@@ -2,112 +2,113 @@
 /* Welcome Section */
 /* ========================= */
 
-#welcome{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+#welcome {
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#welcome h2{
-    text-align:center;
-    margin-bottom:15px;
+#welcome h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#welcome p{
-    text-align:center;
-    line-height:1.6;
+#welcome p {
+    text-align: center;
+    line-height: 1.6;
 }
 
 /* ========================= */
 /* Dashboard Cards */
 /* ========================= */
 
-#dashboard-cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:30px;
+#dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-#dashboard-summary{
-    width:100%;
-    text-align:center;
-    margin-bottom:5px;
+#dashboard-summary {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
 }
 
-.card{
-    width:32%;
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:20px;
-    text-align:center;
-    border-radius:5px;
+.card {
+    flex: 1 1 250px;
+    min-width: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
 }
 
-.card h3{
-    margin-bottom:15px;
+.card h3 {
+    margin-bottom: 15px;
 }
 
-.card p{
-    font-size:28px;
-    font-weight:bold;
+.card p {
+    font-size: 28px;
+    font-weight: bold;
 }
 
 /* ========================= */
 /* Recent Announcements */
 /* ========================= */
 
-#recent-announcements{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:25px;
-    border-radius:5px;
+#recent-announcements {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 25px;
+    border-radius: 5px;
 }
 
-#recent-announcements h2{
-    margin-bottom:15px;
-    text-align:center;
+#recent-announcements h2 {
+    margin-bottom: 15px;
+    text-align: center;
 }
 
-#recent-announcements ul{
-    padding-left:20px;
+#recent-announcements ul {
+    padding-left: 20px;
 }
 
-#recent-announcements li{
-    margin-bottom:10px;
+#recent-announcements li {
+    margin-bottom: 10px;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
 
-    #dashboard-cards{
-        flex-direction:column;
+    #dashboard-cards {
+        flex-direction: column;
     }
 
-    .card{
-        width:100%;
+    .card {
+        width: 100%;
     }
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
 
-    #welcome{
-        padding:20px;
+    #welcome {
+        padding: 20px;
     }
 
-    #welcome p{
-        text-align:left;
+    #welcome p {
+        text-align: left;
     }
 
-    #recent-announcements{
-        padding:20px;
+    #recent-announcements {
+        padding: 20px;
     }
 
 }

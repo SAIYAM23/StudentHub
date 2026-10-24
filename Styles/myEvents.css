@@ -2,102 +2,102 @@
 /* My Events Title */
 /* ========================= */
 
-#events-title{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+#events-title {
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#events-title h2{
-    text-align:center;
-    margin-bottom:15px;
+#events-title h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#events-title p{
-    text-align:center;
-    line-height:1.6;
+#events-title p {
+    text-align: center;
+    line-height: 1.6;
 }
 
 /* ========================= */
 /* Registered Events Section */
 /* ========================= */
 
-main section[aria-labelledby="registered-events-heading"]{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:25px;
-    margin-bottom:30px;
-    border-radius:5px;
+main section[aria-labelledby="registered-events-heading"] {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#registered-events-heading{
-    text-align:center;
-    margin-bottom:20px;
+#registered-events-heading {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* ========================= */
 /* Events Table */
 /* ========================= */
 
-#events-table{
-    width:100%;
-    border-collapse:collapse;
+#events-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
 #events-table th,
-#events-table td{
-    border:1px solid #ccc;
-    padding:12px;
-    text-align:center;
+#events-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
 }
 
-#events-table th{
-    background-color:#d9d9d9;
+#events-table th {
+    background-color: #d9d9d9;
 }
 
 /* ========================= */
 /* Back Button */
 /* ========================= */
 
-#back-button{
-    text-align:center;
+#back-button {
+    text-align: center;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) {
 
-    main section[aria-labelledby="registered-events-heading"]{
-        overflow-x:auto;
+    main section[aria-labelledby="registered-events-heading"] {
+        overflow-x: auto;
     }
 
-    #events-table{
-        min-width:600px;
+    #events-table {
+        min-width: 600px;
     }
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
 
-    #events-title{
-        padding:20px;
+    #events-title {
+        padding: 20px;
     }
 
-    #events-title p{
-        text-align:left;
+    #events-title p {
+        text-align: left;
     }
 
-    main section[aria-labelledby="registered-events-heading"]{
-        padding:20px;
-        overflow-x:auto;
+    main section[aria-labelledby="registered-events-heading"] {
+        padding: 20px;
+        overflow-x: auto;
     }
 
-    #events-table{
-        min-width:600px;
+    #events-table {
+        min-width: 600px;
     }
 
 }

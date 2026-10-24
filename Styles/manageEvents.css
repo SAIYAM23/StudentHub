@@ -2,163 +2,163 @@
 /* Manage Title */
 /* ========================= */
 
-#manage-title{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+#manage-title {
+    background-color: #e5e5e5;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#manage-title h2{
-    text-align:center;
-    margin-bottom:15px;
+#manage-title h2 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-#manage-title p{
-    text-align:center;
-    line-height:1.6;
+#manage-title p {
+    text-align: center;
+    line-height: 1.6;
 }
 
 /* ========================= */
 /* Add Event Form */
 /* ========================= */
 
-#add-event{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+#add-event {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-#add-event h2{
-    text-align:center;
-    margin-bottom:20px;
+#add-event h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#add-event fieldset{
-    width:60%;
-    margin:0 auto;
-    padding:20px;
-    border:1px solid #ccc;
-    border-radius:5px;
+#add-event fieldset {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-#add-event legend{
-    padding:0 8px;
-    font-weight:bold;
+#add-event legend {
+    padding: 0 8px;
+    font-weight: bold;
 }
 
-#add-event form > fieldset > div{
-    margin-bottom:15px;
+#add-event form>fieldset>div {
+    margin-bottom: 15px;
 }
 
-#add-event label{
-    display:block;
-    margin-bottom:5px;
-    font-weight:bold;
+#add-event label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 #add-event input[type="text"],
 #add-event input[type="date"],
-#add-event textarea{
-    width:100%;
-    padding:10px;
-    border:1px solid #999;
-    border-radius:5px;
-    font-size:15px;
-    font-family:Arial, Helvetica, sans-serif;
+#add-event textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#add-event textarea{
-    resize:vertical;
+#add-event textarea {
+    resize: vertical;
 }
 
-#add-event .button{
-    margin-right:10px;
+#add-event .button {
+    margin-right: 10px;
 }
 
 /* ========================= */
 /* Existing Events Table */
 /* ========================= */
 
-#event-list{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:25px;
-    border-radius:5px;
+#event-list {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 25px;
+    border-radius: 5px;
 }
 
-#event-list h2{
-    text-align:center;
-    margin-bottom:20px;
+#event-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#event-list table{
-    width:95%;
-    margin:0 auto 20px;
-    border-collapse:collapse;
+#event-list table {
+    width: 95%;
+    margin: 0 auto 20px;
+    border-collapse: collapse;
 }
 
 #event-list th,
-#event-list td{
-    border:1px solid #ccc;
-    padding:12px;
-    text-align:center;
+#event-list td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
 }
 
-#event-list th{
-    background-color:#d9d9d9;
+#event-list th {
+    background-color: #d9d9d9;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
 
-    #add-event fieldset{
-        width:80%;
+    #add-event fieldset {
+        width: 80%;
     }
 
-    #event-list{
-        overflow-x:auto;
+    #event-list {
+        overflow-x: auto;
     }
 
-    #event-list table{
-        min-width:600px;
+    #event-list table {
+        min-width: 600px;
     }
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
 
-    #manage-title{
-        padding:20px;
+    #manage-title {
+        padding: 20px;
     }
 
-    #manage-title p{
-        text-align:left;
+    #manage-title p {
+        text-align: left;
     }
 
-    #add-event{
-        padding:20px;
+    #add-event {
+        padding: 20px;
     }
 
-    #add-event fieldset{
-        width:100%;
-        padding:15px;
+    #add-event fieldset {
+        width: 100%;
+        padding: 15px;
     }
 
-    #event-list{
-        padding:20px;
-        overflow-x:auto;
+    #event-list {
+        padding: 20px;
+        overflow-x: auto;
     }
 
-    #event-list table{
-        width:100%;
-        min-width:600px;
+    #event-list table {
+        width: 100%;
+        min-width: 600px;
     }
 
 }

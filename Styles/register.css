@@ -2,59 +2,61 @@
 /* Register Box */
 /* ========================= */
 
-#register-box{
-    width:550px;
-    margin:40px auto;
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:30px;
-    border-radius:5px;
+#register-box {
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 5px;
 }
 
-#register-box h2{
-    text-align:center;
-    margin-bottom:25px;
+#register-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 /* ========================= */
 /* Fieldsets */
 /* ========================= */
 
-#register-box fieldset{
-    border:1px solid #ccc;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:5px;
+#register-box fieldset {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-#register-box legend{
-    padding:0 8px;
-    font-weight:bold;
-    color:#333;
+#register-box legend {
+    padding: 0 8px;
+    font-weight: bold;
+    color: #333;
 }
 
-#register-box fieldset fieldset{
-    margin-top:15px;
-    margin-bottom:15px;
+#register-box fieldset fieldset {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
-#register-box fieldset > p{
-    margin-bottom:10px;
+#register-box fieldset>p {
+    margin-bottom: 10px;
 }
 
 /* ========================= */
 /* Form Fields */
 /* ========================= */
 
-#register-box .field-container{
-    width:100%;
-    margin-bottom:15px;
+#register-box .field-container {
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-#register-box .field-container label{
-    display:block;
-    margin-bottom:5px;
-    font-weight:bold;
+#register-box .field-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 #register-box input[type="text"],
@@ -62,87 +64,87 @@
 #register-box input[type="password"],
 #register-box input[type="date"],
 #register-box input[type="tel"],
-#register-box select{
-    width:100%;
-    padding:10px;
-    border:1px solid #999;
-    border-radius:5px;
-    font-size:15px;
-    font-family:Arial, Helvetica, sans-serif;
+#register-box select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#register-box select{
-    background-color:#ffffff;
+#register-box select {
+    background-color: #ffffff;
 }
 
 #register-box input[type="radio"],
-#register-box input[type="checkbox"]{
-    margin-right:5px;
+#register-box input[type="checkbox"] {
+    margin-right: 5px;
 }
 
-#register-box fieldset > label{
-    display:block;
-    margin-bottom:10px;
+#register-box fieldset>label {
+    display: block;
+    margin-bottom: 10px;
 }
 
 #register-box input:focus,
-#register-box select:focus{
-    outline:none;
-    border-color:#555;
+#register-box select:focus {
+    outline: none;
+    border-color: #555;
 }
 
 /* ========================= */
 /* Required Field Star */
 /* ========================= */
 
-#register-box .required{
-    color:red;
-    font-weight:bold;
+#register-box .required {
+    color: red;
+    font-weight: bold;
 }
 
 /* ========================= */
 /* Form Actions */
 /* ========================= */
 
-#register-box .form-actions{
-    text-align:center;
-    margin-top:10px;
+#register-box .form-actions {
+    text-align: center;
+    margin-top: 10px;
 }
 
-#register-box .button{
-    margin:5px;
+#register-box .button {
+    margin: 5px;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
 
-    #register-box{
-        width:80%;
+    #register-box {
+        width: 80%;
     }
 
 }
 
-@media screen and (max-width:600px){
+@media screen and (max-width:600px) {
 
-    #register-box{
-        width:95%;
-        margin:25px auto;
-        padding:20px;
+    #register-box {
+        width: 95%;
+        margin: 25px auto;
+        padding: 20px;
     }
 
-    #register-box fieldset{
-        padding:15px;
+    #register-box fieldset {
+        padding: 15px;
     }
 
-    #register-box h2{
-        font-size:24px;
+    #register-box h2 {
+        font-size: 24px;
     }
 
-    #register-box .button{
-        margin:5px 2px;
+    #register-box .button {
+        margin: 5px 2px;
     }
 
 }
