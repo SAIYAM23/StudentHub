@@ -2,128 +2,127 @@
 /* Admin Welcome */
 /* ========================= */
 
-#admin-welcome {
-    background-color: #e5e5e5;
-    border: 1px solid #ccc;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 5px;
+#admin-welcome{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:5px;
 }
 
-#admin-welcome h2 {
-    text-align: center;
-    margin-bottom: 15px;
+#admin-welcome h2{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-#admin-welcome p {
-    text-align: center;
-    line-height: 1.6;
+#admin-welcome p{
+    text-align:center;
+    line-height:1.6;
 }
 
 /* ========================= */
 /* Admin Cards */
 /* ========================= */
 
-#admin-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 30px;
+#admin-cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:20px;
+    margin-bottom:30px;
 }
 
-#admin-summary-heading {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
+#admin-summary-heading{
+    width:100%;
+    text-align:center;
+    margin-bottom:5px;
 }
 
-.admin-card {
-    flex: 1 1 250px;
-    min-width: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
+.admin-card{
+    width:32%;
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:20px;
+    text-align:center;
+    border-radius:5px;
 }
 
-.admin-card h3 {
-    margin-bottom: 15px;
+.admin-card h3{
+    margin-bottom:15px;
 }
 
-.admin-card p {
-    font-size: 28px;
-    font-weight: bold;
+.admin-card p{
+    font-size:28px;
+    font-weight:bold;
 }
 
 /* ========================= */
 /* Recent Events */
 /* ========================= */
 
-#recent-events {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 25px;
-    border-radius: 5px;
+#recent-events{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:25px;
+    border-radius:5px;
 }
 
-#recent-events h2 {
-    text-align: center;
-    margin-bottom: 20px;
+#recent-events h2{
+    text-align:center;
+    margin-bottom:20px;
 }
 
-#recent-events table {
-    width: 95%;
-    margin: 0 auto 20px;
-    border-collapse: collapse;
+#recent-events table{
+    width:95%;
+    margin:0 auto 20px;
+    border-collapse:collapse;
 }
 
 #recent-events th,
-#recent-events td {
-    border: 1px solid #ccc;
-    padding: 12px;
-    text-align: center;
+#recent-events td{
+    border:1px solid #ccc;
+    padding:12px;
+    text-align:center;
 }
 
-#recent-events th {
-    background-color: #d9d9d9;
+#recent-events th{
+    background-color:#d9d9d9;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:768px){
 
-    #admin-cards {
-        flex-direction: column;
+    #admin-cards{
+        flex-direction:column;
     }
 
-    .admin-card {
-        width: 100%;
+    .admin-card{
+        width:100%;
     }
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:600px){
 
-    #admin-welcome {
-        padding: 20px;
+    #admin-welcome{
+        padding:20px;
     }
 
-    #admin-welcome p {
-        text-align: left;
+    #admin-welcome p{
+        text-align:left;
     }
 
-    #recent-events {
-        padding: 20px;
-        overflow-x: auto;
+    #recent-events{
+        padding:20px;
+        overflow-x:auto;
     }
 
-    #recent-events table {
-        width: 100%;
-        min-width: 500px;
+    #recent-events table{
+        width:100%;
+        min-width:500px;
     }
 
 }

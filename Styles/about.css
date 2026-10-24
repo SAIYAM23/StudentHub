@@ -2,95 +2,95 @@
 /* About Introduction */
 /* ========================= */
 
-#about-intro {
-    background-color: #e5e5e5;
-    border: 1px solid #ccc;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 5px;
+#about-intro{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:5px;
 }
 
-#about-intro h2 {
-    text-align: center;
-    margin-bottom: 15px;
+#about-intro h2{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-#about-intro p {
-    text-align: justify;
-    line-height: 1.7;
+#about-intro p{
+    text-align:justify;
+    line-height:1.7;
 }
 
 /* ========================= */
 /* About Sections */
 /* ========================= */
 
-.about-section {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 5px;
+.about-section{
+    background-color:#ffffff;
+    border:1px solid #ccc;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:5px;
 }
 
-.about-section h2 {
-    margin-bottom: 15px;
-    color: #333;
+.about-section h2{
+    margin-bottom:15px;
+    color:#333;
 }
 
-.about-section p {
-    line-height: 1.7;
-    text-align: justify;
+.about-section p{
+    line-height:1.7;
+    text-align:justify;
 }
 
-.about-section ul {
-    margin-left: 20px;
-    margin-top: 10px;
+.about-section ul{
+    margin-left:20px;
+    margin-top:10px;
 }
 
-.about-section ul li {
-    margin-bottom: 10px;
+.about-section ul li{
+    margin-bottom:10px;
 }
 
 /* ========================= */
 /* Why StudentHub */
 /* ========================= */
 
-#why-studenthub {
-    background-color: #e5e5e5;
-    border: 1px solid #ccc;
-    padding: 30px;
-    border-radius: 5px;
+#why-studenthub{
+    background-color:#e5e5e5;
+    border:1px solid #ccc;
+    padding:30px;
+    border-radius:5px;
 }
 
-#why-studenthub h2 {
-    text-align: center;
-    margin-bottom: 15px;
+#why-studenthub h2{
+    text-align:center;
+    margin-bottom:15px;
 }
 
-#why-studenthub p {
-    text-align: justify;
-    line-height: 1.7;
+#why-studenthub p{
+    text-align:justify;
+    line-height:1.7;
 }
 
 /* ========================= */
 /* Responsive */
 /* ========================= */
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:600px){
 
     #about-intro,
-    #why-studenthub {
-        padding: 20px;
+    #why-studenthub{
+        padding:20px;
     }
 
-    .about-section {
-        padding: 20px;
+    .about-section{
+        padding:20px;
     }
 
     #about-intro p,
     .about-section p,
-    #why-studenthub p {
-        text-align: left;
+    #why-studenthub p{
+        text-align:left;
     }
 
 }

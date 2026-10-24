@@ -190,3 +190,336 @@ footer a {
     }
 
 }
+
+
+/* =========================================================
+   PRACTICAL 4: JavaScript UI interactivity styles
+   ========================================================= */
+
+/* Hamburger menu: hidden on desktop */
+#menu-toggle {
+    display: none;
+    border: 0;
+    padding: 12px 16px;
+    background: #333;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+nav ul {
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-align: center;
+}
+
+/* General interactive components */
+.notification-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    margin: 0 0 22px;
+    border-radius: 8px;
+    background: #fff1c2;
+    color: #382b00;
+    border: 1px solid #e6c85c;
+}
+.notification-banner[hidden],
+.slide[hidden],
+.faq-answer[hidden],
+#info-modal[hidden] {
+    display: none !important;
+}
+.notification-banner button,
+.slider-controls button,
+.modal-close,
+.faq-question {
+    cursor: pointer;
+    font: inherit;
+}
+.notification-banner button {
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 2px 8px;
+}
+#content-slider {
+    margin: 24px 0;
+    padding: 22px;
+    border-radius: 8px;
+    background: #fff;
+    color: #222;
+    border: 1px solid #ddd;
+}
+#content-slider h2 {
+    margin-bottom: 12px;
+}
+.slide {
+    min-height: 90px;
+    padding: 14px 0;
+}
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.slider-controls button {
+    border: 0;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    padding: 9px 14px;
+}
+#slide-counter {
+    margin-left: auto;
+    font-weight: bold;
+}
+#open-modal {
+    margin: 10px 0 22px;
+}
+#info-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgb(0 0 0 / 65%);
+}
+.modal-content {
+    position: relative;
+    width: min(100%, 520px);
+    padding: 28px;
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+    box-shadow: 0 15px 45px rgb(0 0 0 / 30%);
+}
+.modal-content h2 {
+    margin: 0 35px 12px 0;
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    background: transparent;
+    color: #222;
+    font-size: 1.8rem;
+    line-height: 1;
+    padding: 4px 8px;
+}
+.faq-question {
+    width: 100%;
+    display: block;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin: 12px 0 0;
+    background: #f0f3f7;
+    color: #222;
+    font-weight: bold;
+}
+.faq-question::after {
+    content: "+";
+    float: right;
+    font-size: 1.15rem;
+}
+.faq-question[aria-expanded="true"]::after {
+    content: "−";
+}
+.faq-answer {
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-radius: 0 0 6px 6px;
+    background: #fff;
+    color: #222;
+}
+/* Small-screen navigation */
+@media screen and (max-width: 600px) {
+    #menu-toggle {
+        display: block;
+    }
+    nav ul#main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul#main-nav.menu-open {
+        display: flex;
+    }
+    nav ul#main-nav li {
+        width: 100%;
+    }
+    nav ul#main-nav li a {
+        text-align: left;
+        padding: 12px 18px;
+    }
+    .notification-banner {
+        align-items: flex-start;
+    }
+    #content-slider {
+        padding: 16px;
+    }
+    #slide-counter {
+        margin-left: 0;
+    }
+}
+
+
+/* =========================
+   Practical 4: Accessible theme switcher
+   ========================= */
+#header-buttons {
+    align-items: center;
+    flex-wrap: wrap;
+}
+.theme-toggle {
+    cursor: pointer;
+    font: inherit;
+    white-space: nowrap;
+}
+:focus-visible {
+    outline: 3px solid #1769c2;
+    outline-offset: 3px;
+}
+
+/* High-contrast dark theme: page text, cards, forms and interactive elements */
+body.dark-theme {
+    background: #111820 !important;
+    color: #f4f7fb !important;
+}
+body.dark-theme header,
+body.dark-theme footer {
+    background: #080d13 !important;
+    color: #ffffff !important;
+}
+body.dark-theme nav {
+    background: #202b38 !important;
+}
+body.dark-theme nav a,
+body.dark-theme footer a {
+    color: #ffffff !important;
+}
+body.dark-theme nav a:hover,
+body.dark-theme nav a.active {
+    background: #354b62 !important;
+    color: #ffffff !important;
+}
+body.dark-theme main section,
+body.dark-theme main article,
+body.dark-theme #hero,
+body.dark-theme #featured-events,
+body.dark-theme #announcements,
+body.dark-theme #content-slider,
+body.dark-theme #faq-intro,
+body.dark-theme .faq-box,
+body.dark-theme .faq-answer,
+body.dark-theme #about-intro,
+body.dark-theme .about-section,
+body.dark-theme #why-studenthub,
+body.dark-theme #event-intro,
+body.dark-theme .event-card,
+body.dark-theme #contact-info,
+body.dark-theme #contact-form,
+body.dark-theme #login-box,
+body.dark-theme #register-box,
+body.dark-theme #welcome,
+body.dark-theme .card,
+body.dark-theme #recent-announcements,
+body.dark-theme #admin-welcome,
+body.dark-theme .admin-card,
+body.dark-theme #recent-events,
+body.dark-theme #events-title,
+body.dark-theme main section[aria-labelledby="registered-events-heading"],
+body.dark-theme #profile-info,
+body.dark-theme #manage-events,
+body.dark-theme #event-list,
+body.dark-theme .notification-banner,
+body.dark-theme .modal-content {
+    background-color: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme main h1,
+body.dark-theme main h2,
+body.dark-theme main h3,
+body.dark-theme main h4,
+body.dark-theme main p,
+body.dark-theme main li,
+body.dark-theme main label,
+body.dark-theme main legend,
+body.dark-theme main td,
+body.dark-theme main th,
+body.dark-theme main caption,
+body.dark-theme main address,
+body.dark-theme .faq-answer p {
+    color: #f4f7fb !important;
+}
+body.dark-theme main a:not(.button) {
+    color: #9dccff !important;
+}
+body.dark-theme input,
+body.dark-theme textarea,
+body.dark-theme select {
+    background-color: #101720 !important;
+    color: #ffffff !important;
+    border-color: #71849a !important;
+}
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+    color: #cbd5e1 !important;
+    opacity: 1;
+}
+body.dark-theme .faq-question {
+    background: #2a3b4e !important;
+    color: #ffffff !important;
+    border-color: #667b91 !important;
+}
+body.dark-theme .faq-answer {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+}
+body.dark-theme .notification-banner {
+    background: #493b13 !important;
+    color: #fff2c7 !important;
+    border-color: #b99a3b !important;
+}
+body.dark-theme .notification-banner p,
+body.dark-theme .notification-banner strong {
+    color: #fff2c7 !important;
+}
+body.dark-theme .button,
+body.dark-theme .slider-controls button {
+    background: #315a82 !important;
+    color: #ffffff !important;
+    border-color: #7699bd !important;
+}
+body.dark-theme .button:hover,
+body.dark-theme .slider-controls button:hover {
+    background: #416f9d !important;
+}
+body.dark-theme .modal-close {
+    color: #ffffff !important;
+}
+body.dark-theme table th {
+    background: #2c3e51 !important;
+    color: #ffffff !important;
+}
+@media (max-width: 600px) {
+    #header-buttons { justify-content: center; }
+}

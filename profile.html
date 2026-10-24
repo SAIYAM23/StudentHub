@@ -15,15 +15,19 @@
             <h1>StudentHub</h1>
             <p>Your Digital Campus Companion</p>
         </div>
+        <div id="header-buttons">
+            <button type="button" id="theme-toggle" class="button theme-toggle" aria-pressed="false">🌙 Dark mode</button>
+        </div>
     </header>
     <!-- Header Ends -->
 
     <!-- Navigation Starts -->
     <nav aria-label="Student Navigation">
-        <ul>
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+        <ul id="main-nav">
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="profile.html" class="active" aria-current="page">Profile</a></li>
-            <li><a href="myevents.html">My Events</a></li>
+            <li><a href="myEvents.html">My Events</a></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
@@ -127,5 +131,6 @@
     </footer>
     <!-- Footer Ends -->
 
+    <script src="Scripts/practical4.js" defer></script>
 </body>
 </html>

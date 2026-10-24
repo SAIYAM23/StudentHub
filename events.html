@@ -16,6 +16,7 @@
             <p>Your Digital Campus Companion</p>
         </div>
         <div id="header-buttons">
+            <button type="button" id="theme-toggle" class="button theme-toggle" aria-pressed="false">🌙 Dark mode</button>
             <a href="login.html" class="button">Login</a>
             <a href="register.html" class="button">Register</a>
         </div>
@@ -24,7 +25,8 @@
 
     <!-- Navigation Starts -->
     <nav aria-label="Main Navigation">
-        <ul>
+        <button id="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+        <ul id="main-nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="events.html" class="active" aria-current="page">Events</a></li>
@@ -112,5 +114,6 @@
     </footer>
     <!-- Footer Ends -->
 
+    <script src="Scripts/practical4.js" defer></script>
 </body>
 </html>
