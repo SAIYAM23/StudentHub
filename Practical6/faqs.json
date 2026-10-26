@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "question": "How can I register for an event?",
+    "answer": "Select the event and complete the registration process provided by the organizer.",
+    "category": "Events"
+  },
+  {
+    "id": 2,
+    "question": "Where can I find my student ID?",
+    "answer": "Your student ID is available on your university identity card and student portal.",
+    "category": "Students"
+  },
+  {
+    "id": 3,
+    "question": "Which programming language should beginners learn?",
+    "answer": "C++, Python and Java are popular starting points for learning programming.",
+    "category": "Programming"
+  },
+  {
+    "id": 4,
+    "question": "What is HTML?",
+    "answer": "HTML is a markup language used to structure content on web pages.",
+    "category": "Web Development"
+  },
+  {
+    "id": 5,
+    "question": "What is CSS used for?",
+    "answer": "CSS controls the presentation, layout and appearance of web pages.",
+    "category": "Web Development"
+  },
+  {
+    "id": 6,
+    "question": "What is JavaScript?",
+    "answer": "JavaScript adds interactivity and dynamic behavior to web pages.",
+    "category": "Web Development"
+  },
+  {
+    "id": 7,
+    "question": "What is JSON?",
+    "answer": "JSON is a lightweight text format used to store and exchange structured data.",
+    "category": "Programming"
+  },
+  {
+    "id": 8,
+    "question": "What does the Fetch API do?",
+    "answer": "The Fetch API makes asynchronous HTTP requests to retrieve or send data.",
+    "category": "Web Development"
+  },
+  {
+    "id": 9,
+    "question": "How can I prepare for practical exams?",
+    "answer": "Practice each program, understand the logic and test different inputs.",
+    "category": "Exams"
+  },
+  {
+    "id": 10,
+    "question": "How can I improve my programming skills?",
+    "answer": "Write code regularly, solve problems and review errors to understand them.",
+    "category": "Programming"
+  },
+  {
+    "id": 11,
+    "question": "What is a university workshop?",
+    "answer": "A workshop is a practical learning session focused on a particular subject or skill.",
+    "category": "Events"
+  },
+  {
+    "id": 12,
+    "question": "How do I submit an assignment?",
+    "answer": "Follow your course instructions and upload the required files before the deadline.",
+    "category": "Students"
+  },
+  {
+    "id": 13,
+    "question": "What is pagination?",
+    "answer": "Pagination divides a large collection of records into smaller pages.",
+    "category": "Web Development"
+  },
+  {
+    "id": 14,
+    "question": "What is the purpose of an array filter method?",
+    "answer": "The filter method creates a new array containing elements that satisfy a condition.",
+    "category": "Programming"
+  },
+  {
+    "id": 15,
+    "question": "How can I check for JavaScript errors?",
+    "answer": "Open the browser developer tools and inspect the Console tab.",
+    "category": "Exams"
+  }
+]

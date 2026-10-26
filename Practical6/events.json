@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Web Development Workshop",
+    "category": "Workshop",
+    "date": "2026-11-05",
+    "description": "Learn HTML, CSS and JavaScript fundamentals.",
+    "venue": "Computer Lab 1"
+  },
+  {
+    "id": 2,
+    "title": "Coding Competition",
+    "category": "Competition",
+    "date": "2026-11-08",
+    "description": "Solve programming problems and test your skills.",
+    "venue": "Main Auditorium"
+  },
+  {
+    "id": 3,
+    "title": "AI and Machine Learning Seminar",
+    "category": "Seminar",
+    "date": "2026-11-12",
+    "description": "Explore artificial intelligence and machine learning.",
+    "venue": "Seminar Hall"
+  },
+  {
+    "id": 4,
+    "title": "Cyber Security Workshop",
+    "category": "Workshop",
+    "date": "2026-11-15",
+    "description": "Understand common cyber threats and online safety.",
+    "venue": "Computer Lab 2"
+  },
+  {
+    "id": 5,
+    "title": "Annual Sports Meet",
+    "category": "Sports",
+    "date": "2026-11-18",
+    "description": "Participate in indoor and outdoor sports activities.",
+    "venue": "University Sports Ground"
+  },
+  {
+    "id": 6,
+    "title": "Technical Quiz",
+    "category": "Competition",
+    "date": "2026-11-20",
+    "description": "Answer questions on computers and technology.",
+    "venue": "Room 204"
+  },
+  {
+    "id": 7,
+    "title": "Career Guidance Session",
+    "category": "Seminar",
+    "date": "2026-11-22",
+    "description": "Learn about career paths in the IT industry.",
+    "venue": "Conference Hall"
+  },
+  {
+    "id": 8,
+    "title": "Photography Contest",
+    "category": "Competition",
+    "date": "2026-11-25",
+    "description": "Showcase your creativity through photography.",
+    "venue": "Art Gallery"
+  },
+  {
+    "id": 9,
+    "title": "Open Source Introduction",
+    "category": "Workshop",
+    "date": "2026-11-27",
+    "description": "Discover open-source software and collaboration.",
+    "venue": "Computer Lab 1"
+  },
+  {
+    "id": 10,
+    "title": "Entrepreneurship Talk",
+    "category": "Seminar",
+    "date": "2026-12-01",
+    "description": "Learn how to develop and present business ideas.",
+    "venue": "Main Auditorium"
+  },
+  {
+    "id": 11,
+    "title": "Football Tournament",
+    "category": "Sports",
+    "date": "2026-12-03",
+    "description": "Interdepartmental football tournament.",
+    "venue": "University Sports Ground"
+  },
+  {
+    "id": 12,
+    "title": "Database Design Workshop",
+    "category": "Workshop",
+    "date": "2026-12-05",
+    "description": "Practice relational database design and SQL.",
+    "venue": "Computer Lab 3"
+  },
+  {
+    "id": 13,
+    "title": "Project Presentation Day",
+    "category": "Competition",
+    "date": "2026-12-08",
+    "description": "Present innovative student software projects.",
+    "venue": "Conference Hall"
+  },
+  {
+    "id": 14,
+    "title": "Cloud Computing Seminar",
+    "category": "Seminar",
+    "date": "2026-12-10",
+    "description": "Understand cloud platforms and deployment.",
+    "venue": "Seminar Hall"
+  },
+  {
+    "id": 15,
+    "title": "Badminton Championship",
+    "category": "Sports",
+    "date": "2026-12-12",
+    "description": "Compete in the university badminton championship.",
+    "venue": "Indoor Sports Complex"
+  }
+]

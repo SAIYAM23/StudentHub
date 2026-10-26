@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "studentId": "STU1001",
+    "name": "Aarav Patel",
+    "course": "Computer Engineering",
+    "year": 1,
+    "email": "aarav.patel@example.com"
+  },
+  {
+    "id": 2,
+    "studentId": "STU1002",
+    "name": "Diya Shah",
+    "course": "Information Technology",
+    "year": 2,
+    "email": "diya.shah@example.com"
+  },
+  {
+    "id": 3,
+    "studentId": "STU1003",
+    "name": "Rohan Mehta",
+    "course": "Computer Engineering",
+    "year": 3,
+    "email": "rohan.mehta@example.com"
+  },
+  {
+    "id": 4,
+    "studentId": "STU1004",
+    "name": "Ananya Desai",
+    "course": "Information Technology",
+    "year": 1,
+    "email": "ananya.desai@example.com"
+  },
+  {
+    "id": 5,
+    "studentId": "STU1005",
+    "name": "Krish Joshi",
+    "course": "Data Science",
+    "year": 2,
+    "email": "krish.joshi@example.com"
+  },
+  {
+    "id": 6,
+    "studentId": "STU1006",
+    "name": "Mira Trivedi",
+    "course": "Computer Engineering",
+    "year": 4,
+    "email": "mira.trivedi@example.com"
+  },
+  {
+    "id": 7,
+    "studentId": "STU1007",
+    "name": "Dev Shah",
+    "course": "Cyber Security",
+    "year": 3,
+    "email": "dev.shah@example.com"
+  },
+  {
+    "id": 8,
+    "studentId": "STU1008",
+    "name": "Isha Patel",
+    "course": "Information Technology",
+    "year": 2,
+    "email": "isha.patel@example.com"
+  },
+  {
+    "id": 9,
+    "studentId": "STU1009",
+    "name": "Arjun Desai",
+    "course": "Data Science",
+    "year": 1,
+    "email": "arjun.desai@example.com"
+  },
+  {
+    "id": 10,
+    "studentId": "STU1010",
+    "name": "Nisha Mehta",
+    "course": "Cyber Security",
+    "year": 4,
+    "email": "nisha.mehta@example.com"
+  },
+  {
+    "id": 11,
+    "studentId": "STU1011",
+    "name": "Vivaan Shah",
+    "course": "Computer Engineering",
+    "year": 2,
+    "email": "vivaan.shah@example.com"
+  },
+  {
+    "id": 12,
+    "studentId": "STU1012",
+    "name": "Kavya Joshi",
+    "course": "Information Technology",
+    "year": 3,
+    "email": "kavya.joshi@example.com"
+  },
+  {
+    "id": 13,
+    "studentId": "STU1013",
+    "name": "Aditya Patel",
+    "course": "Data Science",
+    "year": 4,
+    "email": "aditya.patel@example.com"
+  },
+  {
+    "id": 14,
+    "studentId": "STU1014",
+    "name": "Riya Trivedi",
+    "course": "Cyber Security",
+    "year": 1,
+    "email": "riya.trivedi@example.com"
+  },
+  {
+    "id": 15,
+    "studentId": "STU1015",
+    "name": "Manav Mehta",
+    "course": "Computer Engineering",
+    "year": 3,
+    "email": "manav.mehta@example.com"
+  }
+]
