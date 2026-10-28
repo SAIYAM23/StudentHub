@@ -395,7 +395,7 @@ $formEvent = $editEvent ?: [
                               maxlength="10000"><?= eventEscape((string) ($formEvent['description'] ?? '')) ?></textarea>
                 </div>
 
-                
+
 <div>
     <label for="category">Category</label>
     <select id="category" name="category" required>
@@ -459,7 +459,7 @@ $formEvent = $editEvent ?: [
         <h2 id="event-list-heading">Existing Events</h2>
 
         <form method="get" class="event-filter">
-            
+
 <div>
     <label for="filter-category">Category</label>
     <select id="filter-category" name="category">
