@@ -1,0 +1,70 @@
+#ajax-search-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+#ajax-search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+#ajax-search-form input,
+#ajax-search-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+#ajax-search-form .student-filter-actions {
+    grid-column: 1 / -1;
+    margin-top: 0;
+}
+
+#ajax-student-form button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+#ajax-student-body .student-row-actions {
+    min-width: 190px;
+}
+
+#ajax-student-body .student-row-actions .button {
+    margin: 3px 2px;
+}
+
+#ajax-message {
+    margin-top: 20px;
+}
+
+#ajax-message[hidden],
+#loading-indicator[hidden],
+#cancel-edit[hidden] {
+    display: none !important;
+}
+
+#visible-students {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+@media (max-width: 800px) {
+    #ajax-search-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #ajax-search-form {
+        grid-template-columns: 1fr;
+    }
+}
