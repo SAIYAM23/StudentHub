@@ -39,12 +39,15 @@ $username = escapeHtml(
         <button id="menu-toggle" type="button"
                 aria-label="Toggle navigation" aria-expanded="false"
                 aria-controls="main-nav">☰ Menu</button>
-        <ul id="main-nav">
-            <li><a href="adminDashboard.php" class="active"
-                   aria-current="page">Admin Dashboard</a></li>
-            <li><a href="manageEvents.html">Manage Events</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
+
+	<ul id="main-nav">
+	    <li><a href="adminDashboard.php" class="active"
+		   aria-current="page">Admin Dashboard</a></li>
+	    <li><a href="manageStudents.php">Manage Students</a></li>
+	    <li><a href="manageEvents.html">Manage Events</a></li>
+	    <li><a href="logout.php">Logout</a></li>
+	</ul>
+
     </nav>
     <!-- Navigation Ends -->
 

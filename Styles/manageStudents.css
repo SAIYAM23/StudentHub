@@ -1,0 +1,225 @@
+#manage-students-title {
+    background: #e5e5e5;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#manage-students-title h2 {
+    margin-bottom: 10px;
+}
+
+#student-summary,
+#student-form-section,
+#student-list-section {
+    background: #fff;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+#student-summary {
+    text-align: center;
+}
+
+#student-summary h2,
+#student-form-section h2,
+#student-list-section h2 {
+    margin-bottom: 18px;
+}
+
+#student-summary p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.student-message {
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border: 1px solid;
+    border-radius: 6px;
+    overflow-wrap: anywhere;
+}
+
+.student-message.success {
+    color: #155724;
+    background: #d4edda;
+    border-color: #a3d9b1;
+}
+
+.student-message.error {
+    color: #842029;
+    background: #f8d7da;
+    border-color: #f1aeb5;
+}
+
+#student-form-section fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#student-form-section legend {
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+.student-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.student-form-grid label,
+#student-search-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.student-form-grid input,
+.student-form-grid select,
+#student-search-form input,
+#student-search-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+.student-form-actions,
+.student-filter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+#student-search-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+#student-search-form .student-filter-actions {
+    grid-column: 1 / -1;
+    margin-top: 0;
+}
+
+.student-result-count {
+    margin: 12px 0;
+}
+
+.student-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#student-list-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 10px;
+}
+
+#student-list-section th,
+#student-list-section td {
+    border: 1px solid #ccc;
+    padding: 11px;
+    text-align: left;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+#student-list-section th {
+    background: #d9d9d9;
+    color: #222;
+}
+
+.student-row-actions {
+    min-width: 155px;
+}
+
+.student-row-actions form {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.delete-button {
+    background: #9f2525;
+    border-color: #7e1b1b;
+}
+
+.delete-button:hover {
+    background: #761919;
+}
+
+#student-list-section .button,
+#student-form-section .button {
+    cursor: pointer;
+    font: inherit;
+}
+
+body.dark-theme #manage-students-title {
+    background: #1d2936;
+    color: #f4f7fb;
+    border-color: #536477;
+}
+
+body.dark-theme .student-message.success {
+    background: #163b2a;
+    color: #c7f5d5;
+    border-color: #367a51;
+}
+
+body.dark-theme .student-message.error {
+    background: #482328;
+    color: #ffd7dc;
+    border-color: #8c424c;
+}
+
+@media screen and (max-width: 800px) {
+    .student-form-grid,
+    #student-search-form {
+        grid-template-columns: 1fr;
+    }
+
+    #student-search-form .student-filter-actions {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #manage-students-title,
+    #student-summary,
+    #student-form-section,
+    #student-list-section {
+        padding: 18px;
+    }
+
+    #student-form-section fieldset {
+        padding: 14px;
+    }
+
+    .student-form-actions,
+    .student-filter-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .student-form-actions .button,
+    .student-filter-actions .button {
+        text-align: center;
+        width: 100%;
+    }
+}
