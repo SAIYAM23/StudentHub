@@ -44,7 +44,7 @@ $username = escapeHtml(
 	    <li><a href="adminDashboard.php" class="active"
 		   aria-current="page">Admin Dashboard</a></li>
 	    <li><a href="manageStudents.php">Manage Students</a></li>
-	    <li><a href="manageEvents.html">Manage Events</a></li>
+	    <li><a href="manageEvents.php">Manage Events</a></li>
 	    <li><a href="logout.php">Logout</a></li>
 	</ul>
 

@@ -1,0 +1,145 @@
+/* Practical 12: Event management enhancements */
+
+.event-message {
+    padding: 14px 18px;
+    margin: 0 0 24px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.event-message.success {
+    background: #e8f5e9;
+    color: #1b5e20;
+    border-color: #a5d6a7;
+}
+
+.event-message.error {
+    background: #ffebee;
+    color: #b71c1c;
+    border-color: #ef9a9a;
+}
+
+#add-event select,
+.event-filter select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    font: inherit;
+}
+
+#add-event input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+}
+
+#add-event input[type="text"],
+#add-event input[type="date"],
+#add-event textarea,
+#add-event select {
+    box-sizing: border-box;
+}
+
+.event-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.event-filter {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 14px;
+    align-items: end;
+    margin: 0 auto 24px;
+    max-width: 900px;
+}
+
+.event-filter label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.event-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#event-list table {
+    min-width: 1000px;
+}
+
+.event-poster-thumb {
+    display: block;
+    width: 90px;
+    height: 70px;
+    object-fit: contain;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.event-poster-preview {
+    display: block;
+    max-width: 220px;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.event-status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.event-status.open {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.event-status.closed {
+    background: #eeeeee;
+    color: #424242;
+}
+
+.event-actions {
+    min-width: 140px;
+}
+
+.event-actions form {
+    margin-top: 8px;
+}
+
+.event-actions .button {
+    display: inline-block;
+    margin: 2px;
+}
+
+.button.danger {
+    background: #b42318;
+    color: #fff;
+    border: 1px solid #b42318;
+}
+
+.button.danger:hover {
+    background: #8f1c13;
+}
+
+@media (max-width: 650px) {
+    .event-filter {
+        grid-template-columns: 1fr;
+    }
+
+    #add-event fieldset {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
