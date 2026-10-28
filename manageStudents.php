@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/auth.php';
 requireRole('admin');
 require_once __DIR__ . '/db_mysqli.php';
+require_once __DIR__ . '/audit.php';
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
@@ -106,7 +107,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $semester
                 );
                 $stmt->execute();
+                $newStudentId = (int) $mysqli->insert_id;
                 $stmt->close();
+
+                writeAuditLog(
+                    'CREATE',
+                    'student',
+                    $newStudentId,
+                    'Created student: ' . $enrollment
+                );
 
                 $_SESSION['student_flash'] = [
                     'type' => 'success',
@@ -133,6 +142,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $changed = $stmt->affected_rows;
                 $stmt->close();
 
+                if ($changed > 0) {
+                    writeAuditLog(
+                        'UPDATE',
+                        'student',
+                        (int) $id,
+                        'Updated student: ' . $enrollment
+                    );
+                }
+
                 $_SESSION['student_flash'] = [
                     'type' => 'success',
                     'message' => $changed > 0
@@ -157,6 +175,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute();
             $deleted = $stmt->affected_rows;
             $stmt->close();
+
+            if ($deleted > 0) {
+                writeAuditLog(
+                    'DELETE',
+                    'student',
+                    (int) $id,
+                    'Deleted student record'
+                );
+            }
 
             $_SESSION['student_flash'] = [
                 'type' => $deleted > 0 ? 'success' : 'error',
@@ -361,7 +388,7 @@ $exportUrl = 'manageStudents.php?' . http_build_query($exportQuery);
         <li><a href="adminDashboard.php">Admin Dashboard</a></li>
         <li><a href="manageStudents.php" class="active"
                aria-current="page">Manage Students</a></li>
-        <li><a href="manageEvents.html">Manage Events</a></li>
+        <li><a href="manageEvents.php">Manage Events</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </nav>

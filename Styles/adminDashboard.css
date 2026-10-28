@@ -1,128 +1,421 @@
-/* ========================= */
-/* Admin Welcome */
-/* ========================= */
+/* =========================================
+   StudentHub - Admin Dashboard
+   Practical 14
+   ========================================= */
 
-#admin-welcome{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+/* ---------- Welcome Section ---------- */
+
+#admin-welcome {
+    background: var(--card-background, #ffffff);
+    color: var(--text-color, #202124);
+    border: 1px solid var(--border-color, #dfe3e8);
+    border-radius: 16px;
+    padding: 32px;
+    margin: 28px 0;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.045);
 }
 
-#admin-welcome h2{
-    text-align:center;
-    margin-bottom:15px;
+#admin-welcome h2 {
+    text-align: center;
+    margin: 0 0 14px;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.3;
 }
 
-#admin-welcome p{
-    text-align:center;
-    line-height:1.6;
+#admin-welcome p {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.8;
 }
 
-/* ========================= */
-/* Admin Cards */
-/* ========================= */
-
-#admin-cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    gap:20px;
-    margin-bottom:30px;
+#admin-welcome .dashboard-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
 }
 
-#admin-summary-heading{
-    width:100%;
-    text-align:center;
-    margin-bottom:5px;
+#admin-welcome .dashboard-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.admin-card{
-    width:32%;
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:20px;
-    text-align:center;
-    border-radius:5px;
+#admin-welcome .dashboard-links a:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-.admin-card h3{
-    margin-bottom:15px;
+/* ---------- Dashboard Summary ---------- */
+
+#admin-cards.dashboard-section {
+    display: block;
+    margin: 34px 0;
 }
 
-.admin-card p{
-    font-size:28px;
-    font-weight:bold;
+#admin-summary-heading {
+    width: auto;
+    text-align: left;
+    margin: 0 0 20px;
+    font-size: 1.55rem;
 }
 
-/* ========================= */
-/* Recent Events */
-/* ========================= */
+/* The new PHP dashboard uses dashboard-stats/dashboard-stat. */
 
-#recent-events{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:25px;
-    border-radius:5px;
+#admin-cards .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 0;
 }
 
-#recent-events h2{
-    text-align:center;
-    margin-bottom:20px;
+#admin-cards .dashboard-stat {
+    position: relative;
+    min-width: 0;
+    padding: 24px;
+    overflow-wrap: anywhere;
+    text-align: left;
+    background: var(--card-background, #ffffff);
+    color: var(--text-color, #202124);
+    border: 1px solid var(--border-color, #dfe3e8);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-#recent-events table{
-    width:95%;
-    margin:0 auto 20px;
-    border-collapse:collapse;
+#admin-cards .dashboard-stat:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
-#recent-events th,
-#recent-events td{
-    border:1px solid #ccc;
-    padding:12px;
-    text-align:center;
+#admin-cards .dashboard-stat h3 {
+    margin: 0 0 16px;
+    font-size: 0.96rem;
+    line-height: 1.5;
+    font-weight: 600;
+    opacity: 0.85;
 }
 
-#recent-events th{
-    background-color:#d9d9d9;
+#admin-cards .dashboard-stat .stat-number {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
 }
 
-/* ========================= */
-/* Responsive */
-/* ========================= */
+/* ---------- Common Dashboard Sections ---------- */
 
-@media screen and (max-width:768px){
+#recent-events,
+#recent-registrations,
+#audit-log {
+    margin: 28px 0;
+    padding: 26px;
+    color: var(--text-color, #202124);
+    background: var(--card-background, #ffffff);
+    border: 1px solid var(--border-color, #dfe3e8);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
+}
 
-    #admin-cards{
-        flex-direction:column;
+#recent-events h2,
+#recent-registrations h2,
+#audit-log h2 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+#recent-registrations > h2,
+#audit-log > h2 {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color, #dfe3e8);
+}
+
+#recent-registrations > p,
+#audit-log > p {
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* ---------- Responsive Tables ---------- */
+
+.dashboard-table-wrap {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color, #dfe3e8);
+    border-radius: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-table-wrap table {
+    width: 100%;
+    min-width: 620px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--card-background, #ffffff);
+    color: var(--text-color, #202124);
+}
+
+.dashboard-table-wrap caption {
+    padding: 13px 16px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-color, #202124);
+    opacity: 0.8;
+    caption-side: top;
+}
+
+.dashboard-table-wrap th,
+.dashboard-table-wrap td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border-color, #dfe3e8);
+    overflow-wrap: anywhere;
+}
+
+.dashboard-table-wrap th {
+    background: var(--table-header-background, #edf1f5);
+    color: var(--text-color, #202124);
+    font-size: 0.88rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dashboard-table-wrap tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.dashboard-table-wrap tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.dashboard-table-wrap tbody tr:hover {
+    background: var(--table-hover-background, #f5f7fa);
+}
+
+.dashboard-table-wrap td[colspan] {
+    padding: 24px 16px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* ---------- Event Status ---------- */
+
+.dashboard-table-wrap .dashboard-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 11px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dashboard-table-wrap .dashboard-status.open {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dashboard-table-wrap .dashboard-status.closed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ---------- Dashboard Notices ---------- */
+
+.dashboard-notice,
+.dashboard-empty {
+    padding: 16px 18px;
+    margin: 20px 0;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+.dashboard-notice {
+    border: 1px solid #d97706;
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.dashboard-empty {
+    border: 1px solid var(--border-color, #dfe3e8);
+}
+
+/* ---------- Dark Theme Compatibility ---------- */
+
+/*
+   These rules activate when the theme switch applies
+   a dark class to the body or document root.
+*/
+
+body.dark-mode #admin-welcome,
+body.dark-mode #admin-cards .dashboard-stat,
+body.dark-mode #recent-events,
+body.dark-mode #recent-registrations,
+body.dark-mode #audit-log,
+.dark-mode #admin-welcome,
+.dark-mode #admin-cards .dashboard-stat,
+.dark-mode #recent-events,
+.dark-mode #recent-registrations,
+.dark-mode #audit-log {
+    background: var(--card-background, #242424);
+    color: var(--text-color, #f1f1f1);
+    border-color: var(--border-color, #444444);
+}
+
+body.dark-mode .dashboard-table-wrap,
+.dark-mode .dashboard-table-wrap {
+    border-color: var(--border-color, #444444);
+}
+
+body.dark-mode .dashboard-table-wrap table,
+.dark-mode .dashboard-table-wrap table {
+    background: var(--card-background, #242424);
+    color: var(--text-color, #f1f1f1);
+}
+
+body.dark-mode .dashboard-table-wrap th,
+.dark-mode .dashboard-table-wrap th {
+    background: var(--table-header-background, #333333);
+    color: var(--text-color, #f1f1f1);
+}
+
+body.dark-mode .dashboard-table-wrap tbody tr:hover,
+.dark-mode .dashboard-table-wrap tbody tr:hover {
+    background: var(--table-hover-background, #303030);
+}
+
+body.dark-mode .dashboard-table-wrap td,
+body.dark-mode .dashboard-table-wrap th,
+.dark-mode .dashboard-table-wrap td,
+.dark-mode .dashboard-table-wrap th {
+    border-color: var(--border-color, #444444);
+}
+
+body.dark-mode .dashboard-notice,
+.dark-mode .dashboard-notice {
+    background: #422b12;
+    color: #ffdfb4;
+    border-color: #a16207;
+}
+
+/* ---------- Responsive Layout ---------- */
+
+@media (max-width: 1050px) {
+    #admin-cards .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    #admin-welcome {
+        padding: 24px;
+        margin: 20px 0;
     }
 
-    .admin-card{
-        width:100%;
+    #admin-cards.dashboard-section {
+        margin: 26px 0;
     }
 
+    #admin-summary-heading {
+        font-size: 1.4rem;
+    }
+
+    #recent-events,
+    #recent-registrations,
+    #audit-log {
+        padding: 20px;
+        margin: 22px 0;
+    }
+
+    #recent-events h2,
+    #recent-registrations h2,
+    #audit-log h2 {
+        font-size: 1.25rem;
+    }
+
+    #admin-cards .dashboard-stat {
+        padding: 20px;
+    }
 }
 
-@media screen and (max-width:600px){
-
-    #admin-welcome{
-        padding:20px;
+@media (max-width: 520px) {
+    #admin-welcome {
+        padding: 20px;
+        border-radius: 12px;
     }
 
-    #admin-welcome p{
-        text-align:left;
+    #admin-welcome h2 {
+        font-size: 1.45rem;
     }
 
-    #recent-events{
-        padding:20px;
-        overflow-x:auto;
+    #admin-welcome p {
+        text-align: left;
     }
 
-    #recent-events table{
-        width:100%;
-        min-width:500px;
+    #admin-welcome .dashboard-links {
+        flex-direction: column;
     }
 
+    #admin-welcome .dashboard-links a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #admin-cards .dashboard-stats {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    #admin-cards .dashboard-stat {
+        padding: 20px;
+    }
+
+    #recent-events,
+    #recent-registrations,
+    #audit-log {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .dashboard-table-wrap table {
+        min-width: 580px;
+    }
+
+    .dashboard-table-wrap th,
+    .dashboard-table-wrap td {
+        padding: 11px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------- Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    #admin-welcome .dashboard-links a,
+    #admin-cards .dashboard-stat,
+    .dashboard-table-wrap tbody tr {
+        transition: none;
+    }
+
+    #admin-welcome .dashboard-links a:hover,
+    #admin-cards .dashboard-stat:hover {
+        transform: none;
+    }
 }

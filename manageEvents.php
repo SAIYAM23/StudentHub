@@ -4,6 +4,7 @@ declare(strict_types=1);
 require_once __DIR__ . '/auth.php';
 requireRole('admin');
 require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/audit.php';
 
 function eventEscape(string $value): string
 {
@@ -165,6 +166,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'status' => $status,
                 ]);
 
+                $newEventId = (int) $pdo->lastInsertId();
+                writeAuditLog(
+                    'CREATE',
+                    'event',
+                    $newEventId,
+                    'Created event: ' . $title
+                );
+
                 eventFlash('success', 'Event added successfully.');
             } else {
                 $stmt = $pdo->prepare('SELECT poster_filename FROM events WHERE event_id = ?');
@@ -199,6 +208,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     removeEventPoster((string) $existing['poster_filename']);
                 }
 
+                writeAuditLog(
+                    'UPDATE',
+                    'event',
+                    (int) $id,
+                    'Updated event: ' . $title
+                );
+
                 eventFlash('success', 'Event updated successfully.');
             }
         } elseif ($action === 'delete') {
@@ -208,7 +224,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new InvalidArgumentException('Invalid event ID.');
             }
 
-            $stmt = $pdo->prepare('SELECT poster_filename FROM events WHERE event_id = ?');
+            $stmt = $pdo->prepare('SELECT title, poster_filename FROM events WHERE event_id = ?');
             $stmt->execute([$id]);
             $existing = $stmt->fetch();
 
@@ -223,6 +239,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 isset($existing['poster_filename'])
                     ? (string) $existing['poster_filename']
                     : null
+            );
+
+            writeAuditLog(
+                'DELETE',
+                'event',
+                (int) $id,
+                'Deleted event: ' . (string) ($existing['title'] ?? 'Unknown title')
             );
 
             eventFlash('success', 'Event deleted successfully.');

@@ -23,6 +23,7 @@ function apiResponse(int $status, array $payload): never
 
 // Start the existing StudentHub session and use its admin role.
 require_once dirname(__DIR__) . '/auth.php';
+require_once dirname(__DIR__) . '/audit.php';
 
 // Return JSON instead of the redirect/plain-text responses normally
 // used by the HTML pages.
@@ -265,8 +266,15 @@ try {
             );
 
             $stmt->execute();
-            $newId = $mysqli->insert_id;
+            $newId = (int) $mysqli->insert_id;
             $stmt->close();
+
+            writeAuditLog(
+                'CREATE',
+                'student',
+                $newId,
+                'Created student via Fetch API: ' . $student['enrollment_number']
+            );
 
             apiResponse(201, [
                 'success' => true,
@@ -316,6 +324,15 @@ try {
             }
         }
 
+        if ($changed > 0) {
+            writeAuditLog(
+                'UPDATE',
+                'student',
+                $id,
+                'Updated student via Fetch API: ' . $student['enrollment_number']
+            );
+        }
+
         apiResponse(200, [
             'success' => true,
             'message' => $changed > 0
@@ -342,6 +359,13 @@ try {
                 'message' => 'Student not found.'
             ]);
         }
+
+        writeAuditLog(
+            'DELETE',
+            'student',
+            $id,
+            'Deleted student via Fetch API'
+        );
 
         apiResponse(200, [
             'success' => true,
