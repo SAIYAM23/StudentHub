@@ -41,8 +41,28 @@
     border-color:#555;
 }
 
-#login-box .button{
-    margin-right:10px;
+#login-box .login-actions {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+}
+
+#login-box .login-actions .button {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 16px;
+    font: inherit;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .admin-link{
@@ -73,4 +93,58 @@
         padding:20px;
     }
 
+    #login-box .login-actions {
+        gap: 10px;
+    }
+
+}
+
+
+/* Dark theme */
+body.dark-theme #login-box {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme #login-box input {
+    background: #101720 !important;
+    color: #f4f7fb !important;
+    border-color: #71849a !important;
+}
+body.dark-theme .admin-link a {
+    color: #9dccff !important;
+}
+
+
+/* Keep the login page at least viewport-height and anchor its footer below content. */
+body.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.login-page main {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 28px auto;
+}
+
+body.login-page #login-box {
+    width: min(450px, 100%);
+    margin: 20px auto;
+}
+
+body.login-page footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+@media (max-width: 600px) {
+    body.login-page main {
+        width: 92%;
+        margin: 20px auto;
+    }
 }

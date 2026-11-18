@@ -123,3 +123,18 @@
     }
 
 }
+
+
+/* Dark theme */
+body.dark-theme #profile-box,
+body.dark-theme .profile-section {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme .profile-section h3 {
+    color: #f4f7fb !important;
+}
+body.dark-theme .profile-section dl > div {
+    border-color: #536477 !important;
+}

@@ -261,3 +261,77 @@ footer p {
         padding: 9px 12px;
     }
 }
+
+
+/* Shared light/dark theme control */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.theme-toggle {
+    flex: 0 0 auto;
+}
+
+/* Practical 6 dark theme */
+body.dark-theme {
+    background: #111820;
+    color: #f4f7fb;
+}
+body.dark-theme header,
+body.dark-theme footer {
+    background: #080d13;
+    color: #ffffff;
+}
+body.dark-theme header p {
+    color: #cbd5e1;
+}
+body.dark-theme .controls,
+body.dark-theme .record-card {
+    background: #1d2936;
+    color: #f4f7fb;
+    border-color: #536477;
+}
+body.dark-theme label,
+body.dark-theme .results h2,
+body.dark-theme #statusMessage,
+body.dark-theme .record-card h3,
+body.dark-theme .record-card p,
+body.dark-theme .record-card strong,
+body.dark-theme #pageInfo {
+    color: #f4f7fb;
+}
+body.dark-theme input,
+body.dark-theme select {
+    background: #101720;
+    color: #f4f7fb;
+    border-color: #71849a;
+}
+body.dark-theme input::placeholder {
+    color: #bdc9d6;
+}
+body.dark-theme .category {
+    background: #344456;
+    color: #e5edf6;
+    border-color: #647b93;
+}
+body.dark-theme button {
+    background: #315a82;
+    color: #ffffff;
+    border-color: #7699bd;
+}
+body.dark-theme button:hover:not(:disabled) {
+    background: #416f9d;
+}
+body.dark-theme button:disabled {
+    background: #435263;
+    border-color: #536477;
+    color: #d0d8e2;
+}
+@media (max-width: 550px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

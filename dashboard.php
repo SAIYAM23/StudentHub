@@ -4,15 +4,60 @@ declare(strict_types=1);
 require_once __DIR__ . '/auth.php';
 requireLogin();
 
-// Admin accounts must use the admin dashboard.
 if (($_SESSION['role'] ?? '') === 'admin') {
     header('Location: adminDashboard.php');
     exit;
 }
 
-$username = escapeHtml(
-    (string) ($_SESSION['username'] ?? 'Student')
-);
+require_once __DIR__ . '/db.php';
+
+$username = (string) ($_SESSION['username'] ?? 'Student');
+$studentId = null;
+$registeredEvents = 0;
+$upcomingEventsCount = 0;
+$upcomingEvents = [];
+$dashboardError = false;
+
+try {
+    $studentQuery = $pdo->prepare(
+        'SELECT student_id, full_name
+         FROM students
+         WHERE email = :email
+         LIMIT 1'
+    );
+    $studentQuery->execute([':email' => (string) $_SESSION['email']]);
+    $student = $studentQuery->fetch();
+
+    if ($student) {
+        $studentId = (int) $student['student_id'];
+        $username = (string) $student['full_name'];
+
+        $registrationQuery = $pdo->prepare(
+            'SELECT COUNT(*)
+             FROM registrations
+             WHERE student_id = :student_id'
+        );
+        $registrationQuery->execute([':student_id' => $studentId]);
+        $registeredEvents = (int) $registrationQuery->fetchColumn();
+    }
+
+    $upcomingEventsCount = (int) $pdo->query(
+        'SELECT COUNT(*) FROM events WHERE event_date >= CURRENT_DATE()'
+    )->fetchColumn();
+
+    $upcomingEvents = $pdo->query(
+        'SELECT title, event_date, venue
+         FROM events
+         WHERE event_date >= CURRENT_DATE()
+         ORDER BY event_date ASC, event_id ASC
+         LIMIT 5'
+    )->fetchAll();
+} catch (Throwable $exception) {
+    error_log('StudentHub student dashboard error: ' . $exception->getMessage());
+    $dashboardError = true;
+}
+
+$username = escapeHtml($username);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,108 +65,90 @@ $username = escapeHtml(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Dashboard</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/dashboard.css">
+    <style>
+        .dashboard-event-list { list-style: none; padding: 0; margin: 0; }
+        .dashboard-event-list li { padding: 0.85rem 0; border-bottom: 1px solid #ddd; }
+        .dashboard-event-list li:last-child { border-bottom: 0; }
+        .dashboard-event-list strong { display: block; margin-bottom: 0.25rem; }
+        .dashboard-event-meta { font-size: 0.95rem; opacity: 0.85; }
+        .dashboard-empty { padding: 1rem; border: 1px dashed #aaa; border-radius: 6px; }
+        .dashboard-error { padding: 1rem; border: 1px solid #b91c1c; border-radius: 6px; }
+    </style>
 </head>
 <body>
-
-    <!-- Header Starts -->
     <header>
         <div id="logo">
             <h1>StudentHub</h1>
             <p>Your Digital Campus Companion</p>
         </div>
-
         <div id="header-buttons">
-            <button
-                type="button"
-                id="theme-toggle"
-                class="button theme-toggle"
-                aria-pressed="false"
-            >🌙 Dark mode</button>
+            <button type="button" id="theme-toggle" class="button theme-toggle" aria-pressed="false">🌙 Dark mode</button>
         </div>
     </header>
-    <!-- Header Ends -->
 
-    <!-- Navigation Starts -->
-    <nav aria-label="Student Navigation">
-        <button
-            id="menu-toggle"
-            type="button"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-            aria-controls="main-nav"
-        >☰ Menu</button>
+    <?php require __DIR__ . '/includes/student_nav.php'; ?>
 
-        <ul id="main-nav">
-            <li>
-                <a href="dashboard.php" class="active"
-                   aria-current="page">Dashboard</a>
-            </li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="myEvents.html">My Events</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-    </nav>
-    <!-- Navigation Ends -->
-
-    <!-- Main Content Starts -->
     <main>
         <section id="welcome">
             <h2>Welcome, <?= $username ?>!</h2>
             <p>
-                You have successfully logged into StudentHub.
-                Here you can manage your profile, view registered
-                events and stay updated with college announcements.
+                This dashboard shows your StudentHub activity, registered events
+                and upcoming campus events associated with your account.
             </p>
         </section>
 
-        <section id="dashboard-cards"
-                 aria-labelledby="dashboard-summary">
-            <h2 id="dashboard-summary">Dashboard Summary</h2>
+        <?php if ($dashboardError): ?>
+            <p class="dashboard-error" role="alert">
+                Some dashboard information could not be loaded. Please try again later.
+            </p>
+        <?php else: ?>
+            <section id="dashboard-cards" aria-labelledby="dashboard-summary">
+                <h2 id="dashboard-summary">Your Dashboard Summary</h2>
+                <article class="card">
+                    <h3>Registered Events</h3>
+                    <p><?= $registeredEvents ?></p>
+                </article>
+                <article class="card">
+                    <h3>Upcoming College Events</h3>
+                    <p><?= $upcomingEventsCount ?></p>
+                </article>
+                <article class="card">
+                    <h3>Your Account</h3>
+                    <p><?= $studentId !== null ? 'Active' : 'Pending' ?></p>
+                </article>
+            </section>
 
-            <article class="card">
-                <h3>Registered Events</h3>
-                <p>3</p>
-            </article>
-
-            <article class="card">
-                <h3>Upcoming Events</h3>
-                <p>6</p>
-            </article>
-
-            <article class="card">
-                <h3>Announcements</h3>
-                <p>5</p>
-            </article>
-        </section>
-
-        <section id="recent-announcements">
-            <h2>Recent Announcements</h2>
-            <ul>
-                <li>Hackathon registrations are open.</li>
-                <li>Sports Meet will begin from August 10.</li>
-                <li>Career Guidance Seminar starts next week.</li>
-                <li>Library timing extended till 8 PM.</li>
-            </ul>
-        </section>
+            <section id="recent-announcements">
+                <h2>Upcoming Campus Events</h2>
+                <?php if ($upcomingEvents === []): ?>
+                    <p class="dashboard-empty">There are currently no upcoming events.</p>
+                <?php else: ?>
+                    <ul class="dashboard-event-list">
+                        <?php foreach ($upcomingEvents as $event): ?>
+                            <li>
+                                <strong><?= escapeHtml((string) $event['title']) ?></strong>
+                                <span class="dashboard-event-meta">
+                                    <?= escapeHtml(date('d M Y', strtotime((string) $event['event_date']))) ?>
+                                    &nbsp;|&nbsp;
+                                    <?= escapeHtml((string) $event['venue']) ?>
+                                </span>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+                <p><a href="events.php" class="button">Explore Events</a></p>
+            </section>
+        <?php endif; ?>
     </main>
-    <!-- Main Content Ends -->
 
-    <!-- Footer Starts -->
     <footer>
         <h2>StudentHub</h2>
         <p>Your Digital Campus Companion</p>
-        <p>
-            Email:
-            <a href="mailto:studenthub@college.edu">
-                studenthub@college.edu
-            </a>
-        </p>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
     </footer>
-    <!-- Footer Ends -->
 
-    <script src="Scripts/practical4.js" defer></script>
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
 </body>
 </html>

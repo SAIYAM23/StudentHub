@@ -1,0 +1,82 @@
+#participants-title,
+#participants-details,
+#participants-list {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+#participants-title {
+    background: #e5e5e5;
+    text-align: center;
+}
+
+#participants-title h2,
+#participants-details h2,
+#participants-list h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#participants-details p {
+    margin: 8px 0;
+}
+
+.participant-count {
+    margin-top: 18px !important;
+    font-size: 1.1rem;
+}
+
+.participants-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.participants-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.participants-table-wrap th,
+.participants-table-wrap td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.participants-table-wrap th {
+    background: #d9d9d9;
+}
+
+.participants-back {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    #participants-title,
+    #participants-details,
+    #participants-list {
+        padding: 18px;
+    }
+}
+
+
+
+/* Dark theme */
+body.dark-theme #participants-title,
+body.dark-theme #participants-details,
+body.dark-theme #participants-list {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme .participants-table-wrap th {
+    background: #2c3e51 !important;
+    color: #fff !important;
+}
+body.dark-theme .participants-table-wrap td {
+    border-color: #536477 !important;
+}

@@ -1,139 +1,298 @@
-/* ========================= */
-/* Hero Section */
-/* ========================= */
-
-#hero{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:50px 30px;
-    margin-bottom:40px;
-    text-align:center;
-    border-radius:5px;
+/* Simple homepage styles. The shared site header, navigation, buttons and footer
+   continue to come from common.css so this page feels like part of StudentHub. */
+.home-page {
+    background: #f5f5f5;
+    color: #222;
 }
 
-#hero h2{
-    font-size:32px;
-    margin-bottom:15px;
+.home-main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 34px auto 55px;
 }
 
-#hero p{
-    width:70%;
-    margin:0 auto 20px;
-    line-height:1.6;
+.home-intro {
+    padding: 34px 38px;
+    margin-bottom: 38px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
 }
 
-/* ========================= */
-/* Featured Events */
-/* ========================= */
-
-#featured-events{
-    margin-bottom:40px;
+.home-eyebrow {
+    margin: 0 0 8px;
+    color: #555;
+    font-size: .78rem;
+    font-weight: bold;
 }
 
-#featured-events h2{
-    text-align:center;
-    margin-bottom:20px;
+.home-intro h1 {
+    margin: 0 0 12px;
+    color: #222;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    line-height: 1.2;
 }
 
-.event-container{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
+.home-intro-text {
+    max-width: 720px;
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
 }
 
-.event-card{
-    flex:1;
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:20px;
-    text-align:center;
-    border-radius:5px;
+.home-events-button {
+    margin-top: 18px;
 }
 
-.event-card h3{
-    margin-bottom:15px;
-    color:#333;
+.home-section {
+    margin: 0 0 42px;
 }
 
-.event-card p{
-    margin-bottom:20px;
-    line-height:1.5;
+.section-heading {
+    margin: 0 0 18px;
 }
 
-/* ========================= */
-/* Announcements */
-/* ========================= */
-
-#announcements{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:25px;
-    border-radius:5px;
+.section-heading h2,
+.home-how-it-works h2 {
+    margin: 0 0 5px;
+    color: #222;
+    font-size: 1.55rem;
 }
 
-#announcements h2{
-    text-align:center;
-    margin-bottom:20px;
+.section-heading p {
+    margin: 0;
+    color: #666;
 }
 
-#announcements ul{
-    list-style-type:disc;
-    margin-left:25px;
+.section-heading-row {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-#announcements li{
-    margin-bottom:12px;
+.text-link {
+    color: #333;
+    font-weight: bold;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-/* ========================= */
-/* Responsive */
-/* ========================= */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
 
-@media screen and (max-width:900px){
+.stat-card {
+    padding: 18px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
 
-    #hero{
-        padding:40px 25px;
+.stat-value {
+    display: block;
+    color: #222;
+    font-size: 1.9rem;
+    font-weight: bold;
+    line-height: 1.25;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: .9rem;
+}
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.event-card {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 19px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.event-category {
+    align-self: flex-start;
+    margin: 0 0 10px;
+    color: #666;
+    font-size: .78rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.event-card h3 {
+    margin: 0 0 6px;
+    color: #222;
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.event-date {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: .85rem;
+}
+
+.event-description {
+    margin: 0 0 16px;
+    color: #555;
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+.event-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #e5e5e5;
+    color: #666;
+    font-size: .85rem;
+}
+
+.event-card-footer span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-card-footer a {
+    flex: 0 0 auto;
+    color: #333;
+    font-weight: bold;
+}
+
+.home-empty-state {
+    padding: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    color: #555;
+    text-align: center;
+}
+
+.home-empty-state h3 {
+    margin: 0 0 6px;
+    color: #222;
+}
+
+.home-empty-state p {
+    margin: 0 0 14px;
+}
+
+.home-how-it-works {
+    padding: 24px 0 0;
+    border-top: 1px solid #ccc;
+}
+
+.home-how-it-works h2 {
+    margin-bottom: 16px;
+}
+
+.how-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.how-steps h3 {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.how-steps p {
+    margin: 0;
+    color: #666;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+/* Dark mode follows the same neutral palette used by the rest of the site. */
+body.dark-theme.home-page {
+    background: #111820;
+    color: #f4f7fb;
+}
+
+body.dark-theme.home-page .home-intro,
+body.dark-theme.home-page .stat-card,
+body.dark-theme.home-page .event-card,
+body.dark-theme.home-page .home-empty-state {
+    background: #1d2936;
+    border-color: #536477;
+    color: #f4f7fb;
+}
+
+body.dark-theme.home-page .home-intro h1,
+body.dark-theme.home-page .section-heading h2,
+body.dark-theme.home-page .home-how-it-works h2,
+body.dark-theme.home-page .event-card h3,
+body.dark-theme.home-page .home-empty-state h3,
+body.dark-theme.home-page .stat-value,
+body.dark-theme.home-page .how-steps h3 {
+    color: #f4f7fb;
+}
+
+body.dark-theme.home-page .home-intro-text,
+body.dark-theme.home-page .section-heading p,
+body.dark-theme.home-page .stat-label,
+body.dark-theme.home-page .event-category,
+body.dark-theme.home-page .event-date,
+body.dark-theme.home-page .event-description,
+body.dark-theme.home-page .event-card-footer,
+body.dark-theme.home-page .home-empty-state,
+body.dark-theme.home-page .how-steps p {
+    color: #cbd5e1;
+}
+
+body.dark-theme.home-page .text-link,
+body.dark-theme.home-page .event-card-footer a {
+    color: #f4f7fb;
+}
+
+body.dark-theme.home-page .event-card-footer,
+body.dark-theme.home-page .home-how-it-works {
+    border-color: #39495d;
+}
+
+@media (max-width: 850px) {
+    .event-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .home-main {
+        width: 90%;
+        margin-top: 22px;
     }
 
-    #hero p{
-        width:85%;
+    .home-intro {
+        padding: 25px 22px;
     }
 
-    .event-container{
-        flex-wrap:wrap;
+    .stats-container,
+    .event-container,
+    .how-steps {
+        grid-template-columns: 1fr;
     }
 
-    .event-card{
-        flex:0 0 48%;
+    .section-heading-row {
+        align-items: flex-start;
+        flex-direction: column;
     }
-
-}
-
-@media screen and (max-width:600px){
-
-    #hero{
-        padding:30px 20px;
-    }
-
-    #hero h2{
-        font-size:26px;
-    }
-
-    #hero p{
-        width:100%;
-    }
-
-    .event-container{
-        flex-direction:column;
-    }
-
-    .event-card{
-        width:100%;
-        flex:1;
-    }
-
-    #announcements{
-        padding:20px;
-    }
-
 }

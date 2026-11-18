@@ -264,52 +264,52 @@
    a dark class to the body or document root.
 */
 
-body.dark-mode #admin-welcome,
-body.dark-mode #admin-cards .dashboard-stat,
-body.dark-mode #recent-events,
-body.dark-mode #recent-registrations,
-body.dark-mode #audit-log,
-.dark-mode #admin-welcome,
-.dark-mode #admin-cards .dashboard-stat,
-.dark-mode #recent-events,
-.dark-mode #recent-registrations,
-.dark-mode #audit-log {
+body.dark-theme #admin-welcome,
+body.dark-theme #admin-cards .dashboard-stat,
+body.dark-theme #recent-events,
+body.dark-theme #recent-registrations,
+body.dark-theme #audit-log,
+.dark-theme #admin-welcome,
+.dark-theme #admin-cards .dashboard-stat,
+.dark-theme #recent-events,
+.dark-theme #recent-registrations,
+.dark-theme #audit-log {
     background: var(--card-background, #242424);
     color: var(--text-color, #f1f1f1);
     border-color: var(--border-color, #444444);
 }
 
-body.dark-mode .dashboard-table-wrap,
-.dark-mode .dashboard-table-wrap {
+body.dark-theme .dashboard-table-wrap,
+.dark-theme .dashboard-table-wrap {
     border-color: var(--border-color, #444444);
 }
 
-body.dark-mode .dashboard-table-wrap table,
-.dark-mode .dashboard-table-wrap table {
+body.dark-theme .dashboard-table-wrap table,
+.dark-theme .dashboard-table-wrap table {
     background: var(--card-background, #242424);
     color: var(--text-color, #f1f1f1);
 }
 
-body.dark-mode .dashboard-table-wrap th,
-.dark-mode .dashboard-table-wrap th {
+body.dark-theme .dashboard-table-wrap th,
+.dark-theme .dashboard-table-wrap th {
     background: var(--table-header-background, #333333);
     color: var(--text-color, #f1f1f1);
 }
 
-body.dark-mode .dashboard-table-wrap tbody tr:hover,
-.dark-mode .dashboard-table-wrap tbody tr:hover {
+body.dark-theme .dashboard-table-wrap tbody tr:hover,
+.dark-theme .dashboard-table-wrap tbody tr:hover {
     background: var(--table-hover-background, #303030);
 }
 
-body.dark-mode .dashboard-table-wrap td,
-body.dark-mode .dashboard-table-wrap th,
-.dark-mode .dashboard-table-wrap td,
-.dark-mode .dashboard-table-wrap th {
+body.dark-theme .dashboard-table-wrap td,
+body.dark-theme .dashboard-table-wrap th,
+.dark-theme .dashboard-table-wrap td,
+.dark-theme .dashboard-table-wrap th {
     border-color: var(--border-color, #444444);
 }
 
-body.dark-mode .dashboard-notice,
-.dark-mode .dashboard-notice {
+body.dark-theme .dashboard-notice,
+.dark-theme .dashboard-notice {
     background: #422b12;
     color: #ffdfb4;
     border-color: #a16207;

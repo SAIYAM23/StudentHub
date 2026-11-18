@@ -230,8 +230,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function deleteStudent(student) {
-        const confirmed = window.confirm(
-            `Delete ${student.full_name} (ID ${student.student_id})? This cannot be undone.`
+        const confirmed = await window.studentHubConfirm(
+            `Delete ${student.full_name} (ID ${student.student_id})? This cannot be undone.`,
+            {
+                title: "Delete student?",
+                confirmLabel: "Delete student",
+                cancelLabel: "Keep student"
+            }
         );
 
         if (!confirmed) return;

@@ -339,7 +339,7 @@ $formEvent = $editEvent ?: [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Manage Events</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/manageEvents.css">
     <link rel="stylesheet" href="Styles/manageEventsAdmin.css">
 </head>
@@ -520,12 +520,13 @@ $formEvent = $editEvent ?: [
                     <th scope="col">Category</th>
                     <th scope="col">Status</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Participants</th>
                     <th scope="col">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if (!$events): ?>
-                    <tr><td colspan="8">No events found. Add your first event above.</td></tr>
+                    <tr><td colspan="9">No events found. Add your first event above.</td></tr>
                 <?php else: ?>
                     <?php foreach ($events as $event): ?>
                         <tr>
@@ -546,11 +547,20 @@ $formEvent = $editEvent ?: [
                                 <?= eventEscape(ucfirst((string) $event['status'])) ?>
                             </span></td>
                             <td><?= nl2br(eventEscape((string) ($event['description'] ?? ''))) ?></td>
+                            <td>
+                                <a class="button"
+                                   href="eventParticipants.php?event_id=<?= (int) $event['event_id'] ?>">
+                                    View Participants
+                                </a>
+                            </td>
                             <td class="event-actions">
                                 <a class="button"
                                    href="manageEvents.php?edit=<?= (int) $event['event_id'] ?>">Edit</a>
                                 <form method="post"
-                                      onsubmit="return confirm('Delete this event permanently?');">
+                                      data-confirm-title="Delete event?"
+                                      data-confirm-message="Delete this event permanently? This action cannot be undone."
+                                      data-confirm-confirm-label="Delete event"
+                                      data-confirm-cancel-label="Keep event">
                                     <input type="hidden" name="csrf_token"
                                            value="<?= eventEscape($csrfToken) ?>">
                                     <input type="hidden" name="action" value="delete">
@@ -572,6 +582,7 @@ $formEvent = $editEvent ?: [
     <p>&copy; <?= date('Y') ?> StudentHub</p>
 </footer>
 
-<script src="Scripts/practical4.js"></script>
+<script src="Scripts/practical4.js?v=theme-audit-3"></script>
+<script src="Scripts/confirmationDialog.js?v=shared-confirm-2" defer></script>
 </body>
 </html>

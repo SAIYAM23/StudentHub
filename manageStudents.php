@@ -363,7 +363,7 @@ $exportUrl = 'manageStudents.php?' . http_build_query($exportQuery);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Manage Students</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/manageStudents.css">
 </head>
 <body>
@@ -590,7 +590,10 @@ $exportUrl = 'manageStudents.php?' . http_build_query($exportQuery);
                                 </a>
 
                                 <form action="manageStudents.php" method="post"
-                                      onsubmit="return confirm('Are you sure you want to delete this student? This action cannot be undone.');">
+                                      data-confirm-title="Delete student?"
+                                      data-confirm-message="Are you sure you want to delete this student? This action cannot be undone."
+                                      data-confirm-confirm-label="Delete student"
+                                      data-confirm-cancel-label="Keep student">
                                     <input type="hidden" name="csrf_token"
                                            value="<?= studentEscape($csrfToken) ?>">
                                     <input type="hidden" name="action" value="delete">
@@ -613,11 +616,11 @@ $exportUrl = 'manageStudents.php?' . http_build_query($exportQuery);
 <footer>
     <h2>StudentHub</h2>
     <p>Your Digital Campus Companion</p>
-    <p>Email: <a href="mailto:studenthub@college.edu">studenthub@college.edu</a></p>
-    <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
 </footer>
 
-<script src="Scripts/practical4.js" defer></script>
+<script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
+<script src="Scripts/confirmationDialog.js?v=shared-confirm-2" defer></script>
 <script src="Scripts/studentSearch.js" defer></script>
 </body>
 </html>

@@ -97,3 +97,96 @@
     }
 
 }
+/* Database-driven event registration */
+
+.event-card-poster {
+    display: block;
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.registration-message {
+    padding: 14px 18px;
+    margin: 0 0 22px;
+    border-radius: 6px;
+    background: #e8f3ff;
+    border: 1px solid #8bbce8;
+}
+
+.registration-message.success {
+    background-color: #dcfce7 !important;
+    border: 1px solid #86c99b !important;
+    color: #166534 !important;
+    font-weight: 600;
+}
+
+body.dark-theme .registration-message.success {
+    background-color: #14532d !important;
+    border-color: #22c55e !important;
+    color: #dcfce7 !important;
+}
+
+.registration-message.error {
+    background: #fee2e2;
+    border-color: #e5a0a0;
+    color: #991b1b;
+}
+
+.registration-message.info {
+    background: #e8f3ff;
+    border-color: #8bbce8;
+}
+
+.event-registration-status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background: #e5e5e5;
+    font-weight: bold;
+}
+
+.event-registration-status.registered {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.event-registration-status.closed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.event-empty {
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+}
+
+
+
+/* Dark theme event registration feedback and status labels */
+body.dark-theme .registration-message.error {
+    background: #4a2026 !important;
+    border-color: #b94a55 !important;
+    color: #ffcdd2 !important;
+}
+body.dark-theme .registration-message.info {
+    background: #173653 !important;
+    border-color: #3979ad !important;
+    color: #c5e3ff !important;
+}
+body.dark-theme .event-registration-status {
+    background: #344456 !important;
+    color: #e5edf6 !important;
+}
+body.dark-theme .event-registration-status.registered {
+    background: #123d2a !important;
+    color: #c5f7d4 !important;
+}
+body.dark-theme .event-registration-status.closed {
+    background: #4a2026 !important;
+    color: #ffcdd2 !important;
+}

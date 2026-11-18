@@ -1,116 +1,70 @@
-/* ========================= */
-/* Contact Information */
-/* ========================= */
-
-#contact-info{
-    background-color:#e5e5e5;
-    border:1px solid #ccc;
-    padding:30px;
-    margin-bottom:30px;
-    border-radius:5px;
+/* StudentHub contact page - restrained, consistent with the site theme. */
+#contact-info,
+#contact-form {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
 }
 
-#contact-info h2{
-    text-align:center;
-    margin-bottom:15px;
+#contact-info h2,
+#contact-form h2 {
+    margin: 0 0 14px;
+    text-align: left;
 }
 
-#contact-info > p{
-    margin-bottom:20px;
-    text-align:center;
+#contact-info p,
+#contact-form p {
+    max-width: 850px;
+    line-height: 1.75;
 }
 
-#contact-info address{
-    font-style:normal;
-    width:60%;
-    margin:0 auto;
+.contact-help-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0;
 }
 
-#contact-info address p{
-    margin-bottom:10px;
+.contact-help-links .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#contact-info address a{
-    color:#333;
+#contact-form .contact-configuration-note {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid #ddd;
+    color: #555;
+    font-size: 0.92rem;
 }
 
-/* ========================= */
-/* Contact Form */
-/* ========================= */
-
-#contact-form{
-    background-color:#ffffff;
-    border:1px solid #ccc;
-    padding:30px;
-    border-radius:5px;
+body.dark-theme #contact-info,
+body.dark-theme #contact-form {
+    background: #1d2936;
+    color: #f4f7fb;
+    border-color: #536477;
 }
 
-#contact-form h2{
-    text-align:center;
-    margin-bottom:20px;
+body.dark-theme #contact-form .contact-configuration-note {
+    color: #c3d0df;
+    border-color: #536477;
 }
 
-#contact-form form{
-    width:60%;
-    margin:0 auto;
-}
-
-#contact-form form > div{
-    margin-bottom:15px;
-}
-
-#contact-form label{
-    display:block;
-    margin-bottom:5px;
-    font-weight:bold;
-}
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea{
-    width:100%;
-    padding:10px;
-    border:1px solid #999;
-    border-radius:5px;
-    font-size:15px;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-#contact-form textarea{
-    resize:vertical;
-}
-
-#contact-form .button{
-    margin-right:10px;
-}
-
-/* ========================= */
-/* Responsive */
-/* ========================= */
-
-@media screen and (max-width:900px){
-
-    #contact-info address,
-    #contact-form form{
-        width:80%;
-    }
-
-}
-
-@media screen and (max-width:600px){
-
+@media (max-width: 600px) {
     #contact-info,
-    #contact-form{
-        padding:20px;
+    #contact-form {
+        padding: 20px;
     }
 
-    #contact-info > p{
-        text-align:left;
+    .contact-help-links {
+        flex-direction: column;
     }
 
-    #contact-info address,
-    #contact-form form{
-        width:100%;
+    .contact-help-links .button {
+        width: 100%;
+        box-sizing: border-box;
     }
-
 }

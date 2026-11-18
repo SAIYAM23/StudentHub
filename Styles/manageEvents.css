@@ -186,3 +186,39 @@
     text-decoration: none;
     white-space: nowrap;
 }
+
+
+
+/* Dark theme */
+body.dark-theme #manage-title,
+body.dark-theme #add-event,
+body.dark-theme #event-list {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme #add-event fieldset {
+    border-color: #536477 !important;
+}
+body.dark-theme #event-list th {
+    background: #2c3e51 !important;
+    color: #fff !important;
+}
+
+
+
+/* Dark theme event form fields */
+body.dark-theme #add-event input[type="text"],
+body.dark-theme #add-event input[type="date"],
+body.dark-theme #add-event input[type="file"],
+body.dark-theme #add-event textarea,
+body.dark-theme #add-event select,
+body.dark-theme .event-filter input,
+body.dark-theme .event-filter select {
+    background: #101720 !important;
+    color: #f4f7fb !important;
+    border-color: #71849a !important;
+}
+body.dark-theme #add-event fieldset {
+    border-color: #536477 !important;
+}

@@ -223,3 +223,34 @@ body.dark-theme .student-message.error {
         width: 100%;
     }
 }
+
+
+
+/* Dark theme coverage for student forms and tables */
+body.dark-theme #student-summary,
+body.dark-theme #student-form-section,
+body.dark-theme #student-list-section {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme #student-form-section fieldset {
+    border-color: #536477 !important;
+}
+body.dark-theme .student-form-grid input,
+body.dark-theme .student-form-grid select,
+body.dark-theme #student-search-form input,
+body.dark-theme #student-search-form select,
+body.dark-theme #ajax-search-form input,
+body.dark-theme #ajax-search-form select {
+    background: #101720 !important;
+    color: #f4f7fb !important;
+    border-color: #71849a !important;
+}
+body.dark-theme #student-list-section th {
+    background: #2c3e51 !important;
+    color: #fff !important;
+}
+body.dark-theme #student-list-section td {
+    border-color: #536477 !important;
+}

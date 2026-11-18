@@ -8,9 +8,70 @@ function h(string $value): string
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET'): ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Registration | StudentHub</title>
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
+</head>
+<body>
+<header>
+    <div id="logo">
+        <h1>StudentHub</h1>
+        <p>Practical 9 — Secure Registration</p>
+    </div>
+    <div id="header-buttons">
+        <button type="button" id="theme-toggle" class="button theme-toggle"
+                aria-pressed="false">🌙 Dark mode</button>
+    </div>
+</header>
+<main>
+    <section id="register-box">
+        <h1>Create StudentHub Account</h1>
+
+        <form action="practical9_register.php" method="POST">
+            <p>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username"
+                       minlength="3" maxlength="50" required>
+            </p>
+
+            <p>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"
+                       maxlength="150" required>
+            </p>
+
+            <p>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                       minlength="8" required>
+            </p>
+
+            <p>
+                <label for="confirm_password">Confirm password</label>
+                <input type="password" id="confirm_password"
+                       name="confirm_password" minlength="8" required>
+            </p>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p><a href="login.php">Back to login</a></p>
+    </section>
+</main>
+</body>
+</html>
+
+<?php exit; endif;
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    header('Allow: POST');
+    header('Allow: GET, POST');
     exit('Method not allowed.');
 }
 
@@ -92,16 +153,27 @@ if ($errors) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Result | StudentHub</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
 </head>
 <body>
+<header>
+    <div id="logo">
+        <h1>StudentHub</h1>
+        <p>Practical 9 — Registration Result</p>
+    </div>
+    <div id="header-buttons">
+        <button type="button" id="theme-toggle" class="button theme-toggle"
+                aria-pressed="false">🌙 Dark mode</button>
+    </div>
+</header>
 <main>
     <section id="register-box">
         <h1>Registration Result</h1>
 
         <?php if (isset($success)): ?>
             <p role="status"><?= h($success) ?></p>
-            <p><a href="practical9_register.html">Register another account</a></p>
+            <p><a href="practical9_register.php">Register another account</a></p>
         <?php else: ?>
             <h2>Please correct the following errors</h2>
             <ul>
@@ -109,7 +181,7 @@ if ($errors) {
                     <li><?= h($error) ?></li>
                 <?php endforeach; ?>
             </ul>
-            <p><a href="practical9_register.html">Return to registration</a></p>
+            <p><a href="practical9_register.php">Return to registration</a></p>
         <?php endif; ?>
     </section>
 </main>

@@ -1,0 +1,2 @@
+# StudentHub has one canonical homepage route.
+DirectoryIndex index.php

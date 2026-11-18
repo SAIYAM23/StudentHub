@@ -17,6 +17,8 @@ $totalRegistrations = 0;
 $recentEvents = [];
 $recentRegistrations = [];
 $recentAuditLogs = [];
+$auditLogAvailable = false;
+$eventStatusAvailable = false;
 $dashboardError = false;
 
 try {
@@ -37,9 +39,18 @@ try {
         ->query('SELECT COUNT(*) FROM registrations')
         ->fetchColumn();
 
-    // Fetch the latest events.
+    // The status column is added by the Practical 12 migration.
+    // Keep the dashboard usable if an older database has not received it yet.
+    $eventStatusAvailable = (bool) $pdo
+        ->query("SHOW COLUMNS FROM events LIKE 'status'")
+        ->fetch(PDO::FETCH_ASSOC);
+
+    $eventStatusSelect = $eventStatusAvailable
+        ? 'status'
+        : 'NULL AS status';
+
     $recentEvents = $pdo->query(
-        'SELECT event_id, title, event_date, status
+        'SELECT event_id, title, event_date, ' . $eventStatusSelect . '
          FROM events
          ORDER BY event_date DESC, event_id DESC
          LIMIT 5'
@@ -62,14 +73,30 @@ try {
          LIMIT 5'
     )->fetchAll(PDO::FETCH_ASSOC);
 
-    // Fetch the latest administrator audit activity.
-    $recentAuditLogs = $pdo->query(
-        'SELECT audit_id, username, action, entity_type,
-                entity_id, details, created_at
-         FROM audit_logs
-         ORDER BY audit_id DESC
-         LIMIT 10'
-    )->fetchAll(PDO::FETCH_ASSOC);
+    // Audit logging is an optional feature in existing StudentHub databases.
+    // Do not fail the whole dashboard when the optional table is not installed.
+    $auditLogAvailable = (bool) $pdo
+        ->query("SHOW TABLES LIKE 'audit_logs'")
+        ->fetchColumn();
+
+    if ($auditLogAvailable) {
+        try {
+            $recentAuditLogs = $pdo->query(
+                'SELECT audit_id, username, action, entity_type,
+                        entity_id, details, created_at
+                 FROM audit_logs
+                 ORDER BY audit_id DESC
+                 LIMIT 10'
+            )->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Throwable $auditException) {
+            error_log(
+                'StudentHub optional audit log unavailable: '
+                . $auditException->getMessage()
+            );
+            $auditLogAvailable = false;
+            $recentAuditLogs = [];
+        }
+    }
 
 } catch (Throwable $exception) {
     error_log(
@@ -97,7 +124,7 @@ function dashboardEscape(mixed $value): string
 
     <title>StudentHub | Admin Dashboard</title>
 
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/adminDashboard.css">
 
     <style>
@@ -351,11 +378,13 @@ function dashboardEscape(mixed $value): string
                                 </td>
 
                                 <td>
-                                    <span class="dashboard-status <?= dashboardEscape($event['status']) ?>">
-                                        <?= dashboardEscape(
-                                            ucfirst((string) $event['status'])
-                                        ) ?>
-                                    </span>
+                                    <?php if (!empty($event['status'])): ?>
+                                        <span class="dashboard-status <?= dashboardEscape($event['status']) ?>">
+                                            <?= dashboardEscape(ucfirst((string) $event['status'])) ?>
+                                        </span>
+                                    <?php else: ?>
+                                        Not configured
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -451,7 +480,13 @@ function dashboardEscape(mixed $value): string
                 </thead>
 
                 <tbody>
-                    <?php if (!$recentAuditLogs): ?>
+                    <?php if (!$auditLogAvailable): ?>
+                        <tr>
+                            <td colspan="6">
+                                Audit activity is not enabled in this database. The rest of the dashboard works normally.
+                            </td>
+                        </tr>
+                    <?php elseif (!$recentAuditLogs): ?>
                         <tr>
                             <td colspan="6">
                                 No audit activity has been recorded yet.
@@ -497,18 +532,10 @@ function dashboardEscape(mixed $value): string
 <footer>
     <h2>StudentHub</h2>
     <p>Your Digital Campus Companion</p>
-
-    <p>
-        Email:
-        <a href="mailto:studenthub@college.edu">
-            studenthub@college.edu
-        </a>
-    </p>
-
-    <p>&copy; <?= date('Y') ?> StudentHub. All Rights Reserved.</p>
+<p>&copy; <?= date('Y') ?> StudentHub. All Rights Reserved.</p>
 </footer>
 
-<script src="Scripts/practical4.js" defer></script>
+<script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
 
 </body>
 </html>

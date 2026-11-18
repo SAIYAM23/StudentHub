@@ -105,12 +105,31 @@
 /* ========================= */
 
 #register-box .form-actions{
-    text-align:center;
-    margin-top:10px;
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:12px;
+    width:min(100%, 400px);
+    margin:18px auto 4px;
 }
 
-#register-box .button{
-    margin:5px;
+/* Match the registration actions to the equal-sized Login/Register
+   buttons used on the login page. */
+#register-box .form-actions > .button{
+    flex:1 1 0;
+    min-width:0;
+    min-height:42px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    box-sizing:border-box;
+    margin:0;
+    padding:10px 16px;
+    font:inherit;
+    font-weight:600;
+    line-height:20px;
+    text-align:center;
+    cursor:pointer;
 }
 
 /* ========================= */
@@ -141,8 +160,8 @@
         font-size:24px;
     }
 
-    #register-box .button{
-        margin:5px 2px;
+    #register-box .form-actions{
+        gap:10px;
     }
 
 }
@@ -200,4 +219,36 @@
 
 @media (prefers-reduced-motion: reduce) {
     #register-box #strengthBar { transition: none; }
+}
+
+
+
+/* Dark theme form readability */
+body.dark-theme #register-box {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+body.dark-theme #register-box fieldset {
+    border-color: #536477 !important;
+}
+body.dark-theme #register-box legend {
+    color: #f4f7fb !important;
+}
+body.dark-theme #register-box input:not([type="submit"]):not([type="reset"]),
+body.dark-theme #register-box select {
+    background: #101720 !important;
+    color: #f4f7fb !important;
+    border-color: #71849a !important;
+}
+body.dark-theme #register-box .field-help {
+    color: #c3d0df !important;
+}
+body.dark-theme #register-box .field-error {
+    color: #ffb4bd !important;
+}
+body.dark-theme #register-box input.invalid,
+body.dark-theme #register-box select.invalid {
+    background: #3a2025 !important;
+    border-color: #e28a94 !important;
 }

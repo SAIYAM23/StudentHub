@@ -44,9 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mysqli->set_charset('utf8mb4');
 
             $stmt = $mysqli->prepare(
-                'SELECT user_id, username, email, password_hash, role
-                 FROM users
-                 WHERE email = ?
+                'SELECT u.user_id,
+                        COALESCE(s.full_name, u.username) AS username,
+                        u.email, u.password_hash, u.role
+                 FROM users AS u
+                 LEFT JOIN students AS s ON s.email = u.email
+                 WHERE u.email = ?
                  LIMIT 1'
             );
 
@@ -100,49 +103,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Login</title>
-    <link rel="stylesheet" href="Styles/common.css">
-    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
+    <link rel="stylesheet" href="Styles/login.css?v=login-layout-2">
 </head>
-<body>
+<body class="login-page">
 
     <!-- Header Starts -->
-    <header>
-        <div id="logo">
-            <h1>StudentHub</h1>
-            <p>Your Digital Campus Companion</p>
-        </div>
-
-        <div id="header-buttons">
-            <button
-                type="button"
-                id="theme-toggle"
-                class="button theme-toggle"
-                aria-pressed="false"
-            >🌙 Dark mode</button>
-        </div>
-    </header>
+    <?php require __DIR__ . '/includes/site_header.php'; ?>
     <!-- Header Ends -->
 
     <!-- Navigation Starts -->
-    <nav aria-label="Main Navigation">
-        <button
-            id="menu-toggle"
-            type="button"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-            aria-controls="main-nav"
-        >☰ Menu</button>
-
-        <ul id="main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.php" class="active" aria-current="page">Login</a></li>
-            <li><a href="practical9_register.html">Register</a></li>
-        </ul>
-    </nav>
+    <?php require __DIR__ . '/includes/site_navigation.php'; ?>
     <!-- Navigation Ends -->
 
     <!-- Main Content Starts -->
@@ -182,14 +153,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     >
                 </div>
 
-                <div>
+                <div class="login-actions">
                     <input
                         type="submit"
                         id="submitbtn"
                         value="Login"
                         class="button"
                     >
-                    <a href="practical9_register.html" class="button">Register</a>
+                    <a href="register.php" class="button">Register</a>
                 </div>
             </form>
 
@@ -205,14 +176,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer>
         <h2>StudentHub</h2>
         <p>Your Digital Campus Companion</p>
-        <p>
-            Email:
-            <a href="mailto:studenthub@college.edu">studenthub@college.edu</a>
-        </p>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
     </footer>
     <!-- Footer Ends -->
 
-    <script src="Scripts/practical4.js" defer></script>
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
 </body>
 </html>

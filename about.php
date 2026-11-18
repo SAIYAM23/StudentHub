@@ -1,39 +1,23 @@
+<?php
+require_once __DIR__ . '/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | About</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/about.css">
 </head>
 <body>
 
     <!-- Header Starts -->
-    <header>
-        <div id="logo">
-            <h1>StudentHub</h1>
-            <p>Your Digital Campus Companion</p>
-        </div>
-        <div id="header-buttons">
-            <button type="button" id="theme-toggle" class="button theme-toggle" aria-pressed="false">🌙 Dark mode</button>
-            <a href="login.html" class="button">Login</a>
-            <a href="register.html" class="button">Register</a>
-        </div>
-    </header>
+    <?php require __DIR__ . '/includes/site_header.php'; ?>
     <!-- Header Ends -->
 
     <!-- Navigation Starts -->
-    <nav aria-label="Main Navigation">
-        <button id="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
-        <ul id="main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active" aria-current="page">About</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <?php require __DIR__ . '/includes/site_navigation.php'; ?>
     <!-- Navigation Ends -->
 
     <!-- Main Content Starts -->
@@ -102,14 +86,10 @@
     <footer>
         <h2>StudentHub</h2>
         <p>Your Digital Campus Companion</p>
-        <p>
-            Email:
-            <a href="mailto:studenthub@college.edu">studenthub@college.edu</a>
-        </p>
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
     </footer>
     <!-- Footer Ends -->
 
-    <script src="Scripts/practical4.js" defer></script>
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
 </body>
 </html>

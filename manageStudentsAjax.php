@@ -16,10 +16,11 @@ $username = escapeHtml((string) ($_SESSION['username'] ?? 'Admin'));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | AJAX Student Management</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
     <link rel="stylesheet" href="Styles/manageStudents.css">
     <link rel="stylesheet" href="Styles/manageStudentsAjax.css">
-    <script src="Scripts/practical4.js" defer></script>
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
+    <script src="Scripts/confirmationDialog.js?v=shared-confirm-2" defer></script>
     <script src="Scripts/manageStudentsAjax.js" defer></script>
 </head>
 <body>

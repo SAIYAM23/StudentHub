@@ -523,3 +523,273 @@ body.dark-theme table th {
 @media (max-width: 600px) {
     #header-buttons { justify-content: center; }
 }
+
+
+/* =========================================================
+   StudentHub full-site dark theme coverage
+   Shared theme tokens and page-specific surfaces.
+   ========================================================= */
+
+body.dark-theme {
+    --card-background: #1d2936;
+    --text-color: #f4f7fb;
+    --border-color: #536477;
+    --table-header-background: #2c3e51;
+    --table-hover-background: #26384a;
+}
+
+body.dark-theme #profile-box,
+body.dark-theme .profile-section,
+body.dark-theme #manage-title,
+body.dark-theme #add-event,
+body.dark-theme #event-list,
+body.dark-theme #participants-title,
+body.dark-theme #participants-details,
+body.dark-theme #participants-list,
+body.dark-theme #student-summary,
+body.dark-theme #student-form-section,
+body.dark-theme #student-list-section,
+body.dark-theme #contact-info,
+body.dark-theme #contact-form,
+body.dark-theme #login-box,
+body.dark-theme #register-box,
+body.dark-theme #recent-events,
+body.dark-theme #recent-registrations,
+body.dark-theme #audit-log {
+    background-color: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #536477 !important;
+}
+
+body.dark-theme main fieldset,
+body.dark-theme main .profile-section dl > div {
+    border-color: #536477 !important;
+}
+
+body.dark-theme main input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+body.dark-theme main textarea,
+body.dark-theme main select {
+    background-color: #101720 !important;
+    color: #f4f7fb !important;
+    border-color: #71849a !important;
+}
+
+body.dark-theme main input::placeholder,
+body.dark-theme main textarea::placeholder {
+    color: #bdc9d6 !important;
+    opacity: 1;
+}
+
+body.dark-theme main table {
+    background-color: #1d2936;
+    color: #f4f7fb;
+}
+
+body.dark-theme main th {
+    background-color: #2c3e51 !important;
+    color: #ffffff !important;
+    border-color: #536477 !important;
+}
+
+body.dark-theme main td {
+    border-color: #536477 !important;
+}
+
+body.dark-theme main a:not(.button) {
+    color: #9dccff !important;
+}
+
+body.dark-theme #login-box .admin-link a,
+body.dark-theme #contact-info address a {
+    color: #9dccff !important;
+}
+
+body.dark-theme #register-box .field-help {
+    color: #c3d0df !important;
+}
+
+body.dark-theme #register-box .field-error {
+    color: #ffb4bd !important;
+}
+
+body.dark-theme #register-box .required {
+    color: #ff8b96 !important;
+}
+
+body.dark-theme #register-box input.invalid,
+body.dark-theme #register-box select.invalid {
+    background-color: #3a2025 !important;
+    border-color: #e28a94 !important;
+}
+
+body.dark-theme #register-box .strength-track {
+    background-color: #435263 !important;
+}
+
+body.dark-theme .registration-message.success,
+body.dark-theme .event-message.success,
+body.dark-theme .student-message.success {
+    background-color: #123d2a !important;
+    color: #c5f7d4 !important;
+    border-color: #2e8b57 !important;
+}
+
+body.dark-theme .registration-message.error,
+body.dark-theme .event-message.error,
+body.dark-theme .student-message.error {
+    background-color: #4a2026 !important;
+    color: #ffcdd2 !important;
+    border-color: #b94a55 !important;
+}
+
+body.dark-theme .registration-message.info {
+    background-color: #173653 !important;
+    color: #c5e3ff !important;
+    border-color: #3979ad !important;
+}
+
+body.dark-theme .event-status.open,
+body.dark-theme .dashboard-status.open {
+    background-color: #123d2a !important;
+    color: #c5f7d4 !important;
+}
+
+body.dark-theme .event-status.closed,
+body.dark-theme .dashboard-status.closed {
+    background-color: #3b3032 !important;
+    color: #ffd7dc !important;
+}
+
+body.dark-theme .dashboard-notice {
+    background-color: #493b13 !important;
+    color: #fff2c7 !important;
+    border-color: #b99a3b !important;
+}
+
+
+/* =========================================================
+   Shared StudentHub confirmation dialog
+   Used for event cancellation and destructive admin actions.
+   ========================================================= */
+
+.studenthub-confirm-dialog {
+    width: min(460px, calc(100vw - 32px));
+    max-width: 460px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #1f2937;
+    box-shadow: 0 24px 70px rgb(0 0 0 / 28%);
+}
+.studenthub-confirm-dialog::backdrop {
+    background: rgb(15 23 42 / 58%);
+    backdrop-filter: blur(2px);
+}
+.studenthub-confirm-content {
+    padding: 28px;
+}
+.studenthub-confirm-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 14px;
+    border-radius: 50%;
+    background: #fff1f2;
+    color: #b42318;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.studenthub-confirm-content h2 {
+    margin: 0 0 10px;
+    color: #1f2937;
+    font-size: 1.3rem;
+}
+.studenthub-confirm-content p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+.studenthub-confirm-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+}
+.studenthub-confirm-button {
+    min-height: 42px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+}
+.studenthub-confirm-cancel {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+.studenthub-confirm-cancel:hover {
+    background: #e2e8f0;
+}
+.studenthub-confirm-accept {
+    background: #b42318;
+    color: #ffffff;
+    border-color: #b42318;
+}
+.studenthub-confirm-accept:hover {
+    background: #8f1c13;
+}
+.studenthub-confirm-button:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+body.dark-theme .studenthub-confirm-dialog {
+    background: #1d2936 !important;
+    color: #f4f7fb !important;
+    border-color: #647b93 !important;
+}
+body.dark-theme .studenthub-confirm-content h2 {
+    color: #f4f7fb !important;
+}
+body.dark-theme .studenthub-confirm-content p {
+    color: #cbd5e1 !important;
+}
+body.dark-theme .studenthub-confirm-icon {
+    background: #4a2026 !important;
+    color: #ffcdd2 !important;
+}
+body.dark-theme .studenthub-confirm-cancel {
+    background: #344456 !important;
+    color: #f4f7fb !important;
+    border-color: #647b93 !important;
+}
+body.dark-theme .studenthub-confirm-cancel:hover {
+    background: #40566c !important;
+}
+body.dark-theme .studenthub-confirm-accept {
+    background: #b42318 !important;
+    color: #ffffff !important;
+    border-color: #e05b51 !important;
+}
+body.dark-theme .studenthub-confirm-dialog::backdrop {
+    background: rgb(0 0 0 / 72%);
+}
+
+@media (max-width: 480px) {
+    .studenthub-confirm-content {
+        padding: 22px;
+    }
+    .studenthub-confirm-actions {
+        flex-direction: column-reverse;
+    }
+    .studenthub-confirm-button {
+        width: 100%;
+    }
+}

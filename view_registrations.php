@@ -48,9 +48,16 @@ if (!is_file($csvFile) || !is_readable($csvFile)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stored Registrations | StudentHub</title>
-    <link rel="stylesheet" href="Styles/common.css">
+    <link rel="stylesheet" href="Styles/common.css?v=full-theme-2">
+    <script src="Scripts/practical4.js?v=theme-audit-3" defer></script>
     <style>
         body { padding: 1.5rem; }
+        body.dark-theme { background: #111820; color: #f4f7fb; }
+        body.dark-theme .notice,
+        body.dark-theme .table-wrapper { color: #f4f7fb; }
+        body.dark-theme table { background: #1d2936; color: #f4f7fb; }
+        body.dark-theme th { background: #2c3e51; color: #fff; }
+        body.dark-theme td, body.dark-theme th { border-color: #536477; }
         .table-wrapper { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
         th, td { border: 1px solid #ccc; padding: .65rem; text-align: left; }
@@ -59,9 +66,19 @@ if (!is_file($csvFile) || !is_readable($csvFile)) {
     </style>
 </head>
 <body>
+<header>
+    <div id="logo">
+        <h1>StudentHub</h1>
+        <p>Local Registration Records</p>
+    </div>
+    <div id="header-buttons">
+        <button type="button" id="theme-toggle" class="button theme-toggle"
+                aria-pressed="false">🌙 Dark mode</button>
+    </div>
+</header>
 <main>
     <h1>Stored Student Registrations</h1>
-    <p><a href="register.html">Back to registration form</a></p>
+    <p><a href="register.php">Back to registration form</a></p>
 
     <?php if ($error !== ''): ?>
         <p class="notice" role="alert"><?= h($error) ?></p>
